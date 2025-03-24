@@ -25,19 +25,35 @@ namespace Eden
 
         private void btnLog_Click(object sender, EventArgs e)
         {
-            string username = txtUn.Text;
-            string password = txtPw.Text;
-            LoginBLL loginBLL = new LoginBLL(); // Khởi tạo đối tượng BLL
-            // Gọi phương thức kiểm tra đăng nhập từ DAL
+            string username = txtUser.Text.Trim();
+            string password = txtPw.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            LoginBLL loginBLL = new LoginBLL();
             if (loginBLL.ValidateUser(username, password))
             {
-                this.DialogResult = DialogResult.OK; // Đăng nhập thành công
+                //MessageBox.Show($"Đăng nhập thành công! Chào {CurrentUser.Username}, bạn thuộc nhóm {CurrentUser.Role}.",
+                //                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             else
             {
                 MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void switch1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (switch1.Checked)
+                txtPw.PasswordChar = (char)0;
+            else
+                txtPw.PasswordChar = '*';
         }
     }
 }

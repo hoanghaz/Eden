@@ -65,6 +65,7 @@
     <Compile Include="DAL\CategoryDAL.cs" />
     <Compile Include="DAL\CustomerDAL.cs" />
     <Compile Include="DAL\DatabaseHelper.cs" />
+    <Compile Include="DAL\LoginDAL.cs" />
     <Compile Include="DAL\ProductDAL.cs" />
     <Compile Include="DAL\UserDAL.cs" />
     <Compile Include="UI\LoginForm.cs">

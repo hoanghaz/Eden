@@ -1,25 +1,50 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 
 namespace Eden
 {
     public class LoginBLL
     {
-        private readonly UserDAL userDAL = new UserDAL();
+        private readonly LoginDAL loginDAL = new LoginDAL();
 
-        public Boolean ValidateUser(string username, string password)
+        // Kiểm tra đăng nhập và lấy thông tin người dùng
+        public bool ValidateUser(string username, string password)
         {
-            DataTable users = userDAL.GetAllUsers(); // Lấy tất cả người dùng
+            DataTable dt = loginDAL.ValidateUser(username, password);
 
-            foreach (DataRow row in users.Rows)
+            if (dt.Rows.Count > 0)
             {
-                if (row["Tên đăng nhập"].ToString() == username &&
-                    row["Mật Khẩu"].ToString() == password)
+                int userId = Convert.ToInt32(dt.Rows[0]["id"]);
+                string userRole = dt.Rows[0]["TenNhomNguoiDung"].ToString();
+                int userGroupId = Convert.ToInt32(dt.Rows[0]["idNhomNguoiDung"]);
+
+                // Lưu thông tin người dùng hiện tại
+                CurrentUser.Id = userId;
+                CurrentUser.Username = dt.Rows[0]["TenNguoiDung"].ToString();
+                CurrentUser.Role = userRole;
+                CurrentUser.UserGroupId = userGroupId;
+
+                // Lấy quyền của nhóm người dùng
+                DataTable permissions = loginDAL.GetUserPermissions(userGroupId);
+                foreach (DataRow row in permissions.Rows)
                 {
-                    return true; // Trả về ID người dùng nếu hợp lệ
+                    CurrentUser.Permissions.Add(row["TenChucNang"].ToString());
                 }
+
+                return true;
             }
-            return false; // Đăng nhập thất bại
+            return false;
         }
+    }
+
+    // Lớp lưu thông tin người dùng sau khi đăng nhập
+    public static class CurrentUser
+    {
+        public static int Id { get; set; }
+        public static string Username { get; set; }
+        public static string Role { get; set; }
+        public static int UserGroupId { get; set; }
+        public static List<string> Permissions { get; set; } = new List<string>();
     }
 }
