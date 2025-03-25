@@ -193,7 +193,7 @@
             this.tLoaiHoa.Location = new System.Drawing.Point(184, 4);
             this.tLoaiHoa.Name = "tLoaiHoa";
             this.tLoaiHoa.Padding = new System.Windows.Forms.Padding(3);
-            this.tLoaiHoa.Size = new System.Drawing.Size(1032, 573);
+            this.tLoaiHoa.Size = new System.Drawing.Size(1060, 669);
             this.tLoaiHoa.TabIndex = 1;
             this.tLoaiHoa.Text = "Loại hoa";
             this.tLoaiHoa.UseVisualStyleBackColor = true;
@@ -268,7 +268,7 @@
             this.tNguoiDung.Location = new System.Drawing.Point(184, 4);
             this.tNguoiDung.Name = "tNguoiDung";
             this.tNguoiDung.Padding = new System.Windows.Forms.Padding(3);
-            this.tNguoiDung.Size = new System.Drawing.Size(1032, 573);
+            this.tNguoiDung.Size = new System.Drawing.Size(1060, 669);
             this.tNguoiDung.TabIndex = 2;
             this.tNguoiDung.Text = "Người dùng";
             this.tNguoiDung.UseVisualStyleBackColor = true;
@@ -343,7 +343,7 @@
             this.tKhachHang.Location = new System.Drawing.Point(184, 4);
             this.tKhachHang.Name = "tKhachHang";
             this.tKhachHang.Padding = new System.Windows.Forms.Padding(3);
-            this.tKhachHang.Size = new System.Drawing.Size(1032, 573);
+            this.tKhachHang.Size = new System.Drawing.Size(1060, 669);
             this.tKhachHang.TabIndex = 3;
             this.tKhachHang.Text = "Khách hàng";
             this.tKhachHang.UseVisualStyleBackColor = true;
@@ -418,7 +418,7 @@
             this.tHoaDon.Location = new System.Drawing.Point(184, 4);
             this.tHoaDon.Name = "tHoaDon";
             this.tHoaDon.Padding = new System.Windows.Forms.Padding(3);
-            this.tHoaDon.Size = new System.Drawing.Size(1032, 573);
+            this.tHoaDon.Size = new System.Drawing.Size(1060, 669);
             this.tHoaDon.TabIndex = 4;
             this.tHoaDon.Text = "Hóa đơn";
             this.tHoaDon.UseVisualStyleBackColor = true;
@@ -541,7 +541,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Eden quản lý";
             this.guna2TabControl1.ResumeLayout(false);
             this.tHoa.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgPro)).EndInit();

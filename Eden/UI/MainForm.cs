@@ -24,6 +24,7 @@ namespace Eden
         {
             InitializeComponent();
             init();
+            MessageBox.Show("Welcome to Eden!" + string.Join(", ", CurrentUser.Permissions));
         }
 
         private void init()
