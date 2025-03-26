@@ -57,15 +57,23 @@
   <ItemGroup>
     <Compile Include="BLL\BillBLL.cs" />
     <Compile Include="BLL\CategoryBLL.cs" />
+    <Compile Include="BLL\ChiTietHoaDonBLL.cs" />
+    <Compile Include="BLL\ChiTietPhieuNhapBLL.cs" />
     <Compile Include="BLL\CustomerBLL.cs" />
     <Compile Include="BLL\LoginBLL.cs" />
+    <Compile Include="BLL\NhaCungCapBLL.cs" />
+    <Compile Include="BLL\PhieuNhapBLL.cs" />
     <Compile Include="BLL\ProductBLL.cs" />
     <Compile Include="BLL\UserBLL.cs" />
     <Compile Include="DAL\BillDAL.cs" />
     <Compile Include="DAL\CategoryDAL.cs" />
+    <Compile Include="DAL\ChiTietHoaDonDAL.cs" />
+    <Compile Include="DAL\ChiTietPhieuNhapDAL.cs" />
+    <Compile Include="DAL\NhaCungCapDAL.cs" />
     <Compile Include="DAL\CustomerDAL.cs" />
     <Compile Include="DAL\DatabaseHelper.cs" />
     <Compile Include="DAL\LoginDAL.cs" />
+    <Compile Include="DAL\PhieuNhapDAL.cs" />
     <Compile Include="DAL\ProductDAL.cs" />
     <Compile Include="DAL\UserDAL.cs" />
     <Compile Include="UI\LoginForm.cs">
