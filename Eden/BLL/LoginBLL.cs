@@ -24,6 +24,8 @@ namespace Eden
                 CurrentUser.Username = dt.Rows[0]["TenNguoiDung"].ToString();
                 CurrentUser.Role = userRole;
                 CurrentUser.UserGroupId = userGroupId;
+                // Xóa danh sách quyền cũ trước khi thêm quyền mới
+                CurrentUser.Permissions.Clear();
 
                 // Lấy quyền của nhóm người dùng
                 DataTable permissions = loginDAL.GetUserPermissions(userGroupId);
@@ -46,5 +48,14 @@ namespace Eden
         public static string Role { get; set; }
         public static int UserGroupId { get; set; }
         public static List<string> Permissions { get; set; } = new List<string>();
+
+        public static void Logout()
+        {
+            Id = 0;
+            Username = null;
+            Role = null;
+            UserGroupId = 0;
+            Permissions.Clear();
+        }
     }
 }

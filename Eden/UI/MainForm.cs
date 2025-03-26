@@ -46,6 +46,24 @@ namespace Eden
 
         private void LoadDataBill() => dgBill.DataSource = billBLL.GetAllBills();
 
+        private void gbOut_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                // Xóa thông tin người dùng
+                CurrentUser.Logout();
+
+                // Mở lại màn hình đăng nhập
+                LoginForm loginForm = new LoginForm();
+                loginForm.Show();
+
+                // Đóng form chính
+                this.Hide();
+            }
+        }
+
         //private void btnAdd_Click(object sender, EventArgs e)
         //{
         //    try
