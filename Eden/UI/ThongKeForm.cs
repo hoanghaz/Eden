@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Eden
+namespace Eden.UI
 {
-    public partial class HoaDonForm : Form
+    public partial class ThongKeForm : Form
     {
-        public HoaDonForm()
+        public ThongKeForm()
         {
             InitializeComponent();
         }

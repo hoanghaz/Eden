@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Eden
 {
-    public partial class HoaDonForm : Form
+    public partial class NhomNguoiDungForm : Form
     {
-        public HoaDonForm()
+        public NhomNguoiDungForm()
         {
             InitializeComponent();
         }

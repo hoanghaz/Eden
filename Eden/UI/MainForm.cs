@@ -8,7 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using Eden.UI;
 using Guna.UI2.WinForms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrayNotify;
 
 namespace Eden
 {
@@ -127,22 +129,78 @@ namespace Eden
                 selectedBtn.FillColor2 = Color.FromArgb(26, 49, 80);
                 selectedBtn.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
 
-                // Xử lý logic khi click vào từng nút
+                //Xử lý logic khi click vào từng nút
                 switch (selectedBtn.Name)
                 {
                     case "btnTK":
                         // Xử lý Thống kê
-                        MessageBox.Show("Thống kê");
+                        pnlMainContent.Controls.Clear();
+                        ShowForm(new ThongKeForm());
                         break;
 
                     case "btnSP":
                         // Xử lý Sản phẩm
+                        pnlMainContent.Controls.Clear();
+                        ShowForm(new SanPhamForm());
                         break;
-                        // Thêm các case khác tương ứng
+
+                    case "btnPL":
+                        // Xử lý Phân loại
+                        pnlMainContent.Controls.Clear();
+                        ShowForm(new PhanLoaiForm());
+                        break;
+
+                    case "btnND":
+                        // Xử lý Người dùng
+                        pnlMainContent.Controls.Clear();
+                        ShowForm(new NguoiDungForm());
+                        break;
+
+                    case "btnNND":
+                        // Xử lý Nhóm người dùng
+                        pnlMainContent.Controls.Clear();
+                        ShowForm(new NhomNguoiDungForm());
+                        break;
+
+                    case "btnKH":
+                        // Xử lý Khách hàng
+                        pnlMainContent.Controls.Clear();
+                        ShowForm(new KhachHangForm());
+                        break;
+
+                    case "btnHD":
+                        // Xử lý Hóa đơn
+                        pnlMainContent.Controls.Clear();
+                        ShowForm(new HoaDonForm());
+                        break;
+
+                    case "btnNK":
+                        // Xử lý Nhập kho
+                        pnlMainContent.Controls.Clear();
+                        ShowForm(new NhapKhoForm());
+                        break;
+
+                    case "btnNCC":
+                        // Xử lý Nhà cung cấp
+                        pnlMainContent.Controls.Clear();
+                        ShowForm(new NhaCungCapForm());
+                        break;
                 }
             };
 
             return btn;
+        }
+
+        private void ShowForm(Form form)
+        {
+            pnlMainContent.Controls.Clear();
+            picVan.Visible = false;
+
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
+            pnlMainContent.Controls.Add(form);
+            form.Show();
         }
 
         private void gbOut_Click(object sender, EventArgs e)

@@ -108,6 +108,24 @@
     <Compile Include="UI\NguoiDungForm.Designer.cs">
       <DependentUpon>NguoiDungForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\NhaCungCapForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\NhaCungCapForm.Designer.cs">
+      <DependentUpon>NhaCungCapForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\NhapKhoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\NhapKhoForm.Designer.cs">
+      <DependentUpon>NhapKhoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\NhomNguoiDungForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\NhomNguoiDungForm.Designer.cs">
+      <DependentUpon>NhomNguoiDungForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\PhanLoaiForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +137,12 @@
     </Compile>
     <Compile Include="UI\SanPhamForm.Designer.cs">
       <DependentUpon>SanPhamForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ThongKeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ThongKeForm.Designer.cs">
+      <DependentUpon>ThongKeForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -204,6 +228,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\van1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
