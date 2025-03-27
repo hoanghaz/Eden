@@ -39,17 +39,22 @@ namespace Eden
             {
                 this.Hide(); // Ẩn LoginForm
 
-                MainForm mainForm = new MainForm();
-                mainForm.ShowDialog(); // Đảm bảo vòng đời form hợp lý
-
+                using (MainForm mainForm = new MainForm())
+                {
+                    mainForm.ShowDialog(); // Đảm bảo vòng đời form hợp lý
+                    mainForm.Dispose(); // Giải phóng tài nguyên
+                }
                 // Khi MainForm đóng, LoginForm sẽ hiện lại
                 txtPw.Clear();
                 txtUser.Clear();
+                txtUser.Focus();
                 this.Show();
             }
             else
             {
                 MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtPw.Clear();
+                txtUser.Focus();
             }
         }
 

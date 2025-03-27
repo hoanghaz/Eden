@@ -28,59 +28,122 @@ namespace Eden
             //MessageBox.Show("Welcome to Eden!" + string.Join(", ", CurrentUser.Permissions));
         }
 
+        private List<Guna2GradientButton> sidebarButtons = new List<Guna2GradientButton>();
+
         private void InitializeSidebarButtons()
         {
             int yPosition = 94;
-            //btnTK = CreateSBB("Thống kê","btnTK",yPosition,"report");
+
+            // Tạo danh sách các nút với thông tin: Text, Name, Image
+            var buttonInfos = new List<(string Text, string Name, string Image)>();
+            if (CurrentUser.Permissions?.Contains("BCTK") == true)
+                buttonInfos.Add(("Thống kê", "btnTK", "report"));
+            if (CurrentUser.Permissions?.Contains("QLSP") == true)
+            {
+                buttonInfos.Add(("Sản phẩm", "btnSP", "product"));
+                buttonInfos.Add(("Phân loại", "btnPL", "category"));
+            }
+            if (CurrentUser.Permissions?.Contains("QLND") == true)
+            {
+                buttonInfos.Add(("Người dùng", "btnND", "user"));
+                buttonInfos.Add(("Nhóm người dùng", "btnNND", "group"));
+            }
+            if (CurrentUser.Permissions?.Contains("QLKH") == true)
+                buttonInfos.Add(("Khách hàng", "btnKH", "cus"));
+            if (CurrentUser.Permissions?.Contains("QLHD") == true)
+                buttonInfos.Add(("Hóa đơn", "btnHD", "invoice"));
+            if (CurrentUser.Permissions?.Contains("QLNH") == true)
+            {
+                buttonInfos.Add(("Nhập kho", "btnNK", "ware"));
+                buttonInfos.Add(("Nhà cung cấp", "btnNCC", "cc"));
+            }
+
+            foreach (var info in buttonInfos)
+            {
+                var btn = CreateSBB(info.Text, info.Name, yPosition, info.Image);
+                this.Controls.Add(btn); // Hoặc thêm vào Panel chứa sidebar
+                btn.BringToFront();
+                sidebarButtons.Add(btn);
+                yPosition += 65;
+            }
         }
 
-        //private Guna2GradientButton CreateSBB(string text, string name, int y, string img)
-        //{
-        //    Guna2GradientButton btn = new Guna.UI2.WinForms.Guna2GradientButton();
-        //    btn.Animated = true;
-        //    btn.BackColor = System.Drawing.Color.Transparent;
-        //    btn.CustomImages.Image = global::Eden.Properties.Resources.img;
-        //    btn.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-        //    btn.CustomImages.ImageOffset = new System.Drawing.Point(10, 0);
-        //    btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-        //    btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-        //    btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-        //    btn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-        //    btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-        //    btn.FillColor = System.Drawing.Color.Empty;
-        //    btn.FillColor2 = System.Drawing.Color.Empty;
-        //    btn.Font = new System.Drawing.Font("Segoe UI", 9F);
-        //    btn.ForeColor = System.Drawing.Color.White;
-        //    btn.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(125)))), ((int)(((byte)(167)))));
-        //    btn.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(49)))), ((int)(((byte)(80)))));
-        //    btn.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        //    btn.Location = new System.Drawing.Point(0, y);
-        //    btn.Name = name;
-        //    btn.Size = new System.Drawing.Size(219, 69);
-        //    btn.TabIndex = 1;
-        //    btn.Text = text;
-        //    btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-        //    btn.TextOffset = new System.Drawing.Point(50, 0);
-        //}
+        private Guna2GradientButton CreateSBB(string text, string name, int y, string imgName)
+        {
+            Guna2GradientButton btn = new Guna2GradientButton();
 
-        //private void init()
-        //{
-        //    LoadDataProduct();
-        //    LoadDataCategory();
-        //    LoadDataUser();
-        //    LoadDataCustomer();
-        //    LoadDataBill();
-        //}
+            // Thiết lập cơ bản
+            btn.Name = name;
+            btn.Text = text;
+            btn.Location = new Point(0, y);
+            btn.Size = new Size(219, 69);
+            btn.TabIndex = 1;
+            btn.Animated = true;
 
-        //private void LoadDataProduct() => dgPro.DataSource = productBLL.GetAllProducts();
+            // Thiết lập font và text
+            btn.Font = new Font("Segoe UI", 9F, FontStyle.Regular);
+            btn.ForeColor = Color.White;
+            btn.TextAlign = HorizontalAlignment.Left;
+            btn.TextOffset = new Point(30, 0);
 
-        //private void LoadDataCategory() => dgCate.DataSource = categoryBLL.GetAllCategories();
+            // Thiết lập hình ảnh (giả sử bạn có Resources chứa các ảnh tương ứng)
+            var image = (Image)Properties.Resources.ResourceManager.GetObject(imgName);
+            btn.Image = image;
+            btn.ImageAlign = HorizontalAlignment.Left;
+            btn.ImageOffset = new Point(10, 0);
+            btn.ImageSize = new Size(24, 24);
 
-        //private void LoadDataUser() => dgUser.DataSource = userBLL.GetAllUsers();
+            // Màu sắc
+            btn.FillColor = Color.FromArgb(26, 49, 80);
+            btn.FillColor2 = Color.FromArgb(26, 49, 80);
+            btn.BorderThickness = 0;
 
-        //private void LoadDataCustomer() => dgCus.DataSource = customerBLL.GetAllCustomers();
+            // Trạng thái hover
+            btn.HoverState.FillColor = Color.FromArgb(58, 125, 167);
+            btn.HoverState.FillColor2 = Color.FromArgb(26, 49, 80);
+            btn.HoverState.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
 
-        //private void LoadDataBill() => dgBill.DataSource = billBLL.GetAllBills();
+            // Trạng thái disabled
+            btn.DisabledState.BorderColor = Color.DarkGray;
+            btn.DisabledState.CustomBorderColor = Color.DarkGray;
+            btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btn.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
+            btn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+
+            // Sự kiện click
+            btn.Click += (sender, e) =>
+            {
+                // Reset màu tất cả các nút
+                foreach (var control in this.Controls.OfType<Guna2GradientButton>())
+                {
+                    control.FillColor = Color.FromArgb(26, 49, 80);
+                    control.FillColor2 = Color.FromArgb(26, 49, 80);
+                    control.Font = new Font("Segoe UI", 9F, FontStyle.Regular);
+                }
+
+                // Đặt màu cho nút được chọn
+                var selectedBtn = (Guna2GradientButton)sender;
+                selectedBtn.FillColor = Color.FromArgb(58, 125, 167);
+                selectedBtn.FillColor2 = Color.FromArgb(26, 49, 80);
+                selectedBtn.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+
+                // Xử lý logic khi click vào từng nút
+                switch (selectedBtn.Name)
+                {
+                    case "btnTK":
+                        // Xử lý Thống kê
+                        MessageBox.Show("Thống kê");
+                        break;
+
+                    case "btnSP":
+                        // Xử lý Sản phẩm
+                        break;
+                        // Thêm các case khác tương ứng
+                }
+            };
+
+            return btn;
+        }
 
         private void gbOut_Click(object sender, EventArgs e)
         {
@@ -89,7 +152,7 @@ namespace Eden
             if (result == DialogResult.Yes)
             {
                 // Xóa thông tin người dùng
-                CurrentUser.Logout();
+                CurrentUser.Logout(sidebarButtons, guna2Panel2);
 
                 // Mở lại màn hình đăng nhập
                 LoginForm loginForm = new LoginForm();
@@ -98,11 +161,6 @@ namespace Eden
                 // Đóng form chính
                 this.Close();
             }
-        }
-
-        private void btnPL_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

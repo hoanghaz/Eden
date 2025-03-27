@@ -241,9 +241,9 @@
             this.guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             this.guna2ControlBox2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(49)))), ((int)(((byte)(80)))));
             this.guna2ControlBox2.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox2.Location = new System.Drawing.Point(538, 13);
+            this.guna2ControlBox2.Location = new System.Drawing.Point(537, 12);
             this.guna2ControlBox2.Name = "guna2ControlBox2";
-            this.guna2ControlBox2.Size = new System.Drawing.Size(45, 25);
+            this.guna2ControlBox2.Size = new System.Drawing.Size(45, 35);
             this.guna2ControlBox2.TabIndex = 1;
             // 
             // guna2ControlBox1
@@ -252,9 +252,9 @@
             this.guna2ControlBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(49)))), ((int)(((byte)(80)))));
             this.guna2ControlBox1.HoverState.FillColor = System.Drawing.Color.Maroon;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(598, 13);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(597, 12);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
-            this.guna2ControlBox1.Size = new System.Drawing.Size(45, 25);
+            this.guna2ControlBox1.Size = new System.Drawing.Size(45, 35);
             this.guna2ControlBox1.TabIndex = 1;
             // 
             // guna2PictureBox2
