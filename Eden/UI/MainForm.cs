@@ -23,28 +23,64 @@ namespace Eden
         public MainForm()
         {
             InitializeComponent();
-            init();
-            MessageBox.Show("Welcome to Eden!" + string.Join(", ", CurrentUser.Permissions));
+            InitializeSidebarButtons();
+            //init();
+            //MessageBox.Show("Welcome to Eden!" + string.Join(", ", CurrentUser.Permissions));
         }
 
-        private void init()
+        private void InitializeSidebarButtons()
         {
-            LoadDataProduct();
-            LoadDataCategory();
-            LoadDataUser();
-            LoadDataCustomer();
-            LoadDataBill();
+            int yPosition = 94;
+            //btnTK = CreateSBB("Thống kê","btnTK",yPosition,"report");
         }
 
-        private void LoadDataProduct() => dgPro.DataSource = productBLL.GetAllProducts();
+        //private Guna2GradientButton CreateSBB(string text, string name, int y, string img)
+        //{
+        //    Guna2GradientButton btn = new Guna.UI2.WinForms.Guna2GradientButton();
+        //    btn.Animated = true;
+        //    btn.BackColor = System.Drawing.Color.Transparent;
+        //    btn.CustomImages.Image = global::Eden.Properties.Resources.img;
+        //    btn.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+        //    btn.CustomImages.ImageOffset = new System.Drawing.Point(10, 0);
+        //    btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+        //    btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+        //    btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+        //    btn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+        //    btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+        //    btn.FillColor = System.Drawing.Color.Empty;
+        //    btn.FillColor2 = System.Drawing.Color.Empty;
+        //    btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+        //    btn.ForeColor = System.Drawing.Color.White;
+        //    btn.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(125)))), ((int)(((byte)(167)))));
+        //    btn.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(49)))), ((int)(((byte)(80)))));
+        //    btn.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        //    btn.Location = new System.Drawing.Point(0, y);
+        //    btn.Name = name;
+        //    btn.Size = new System.Drawing.Size(219, 69);
+        //    btn.TabIndex = 1;
+        //    btn.Text = text;
+        //    btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+        //    btn.TextOffset = new System.Drawing.Point(50, 0);
+        //}
 
-        private void LoadDataCategory() => dgCate.DataSource = categoryBLL.GetAllCategories();
+        //private void init()
+        //{
+        //    LoadDataProduct();
+        //    LoadDataCategory();
+        //    LoadDataUser();
+        //    LoadDataCustomer();
+        //    LoadDataBill();
+        //}
 
-        private void LoadDataUser() => dgUser.DataSource = userBLL.GetAllUsers();
+        //private void LoadDataProduct() => dgPro.DataSource = productBLL.GetAllProducts();
 
-        private void LoadDataCustomer() => dgCus.DataSource = customerBLL.GetAllCustomers();
+        //private void LoadDataCategory() => dgCate.DataSource = categoryBLL.GetAllCategories();
 
-        private void LoadDataBill() => dgBill.DataSource = billBLL.GetAllBills();
+        //private void LoadDataUser() => dgUser.DataSource = userBLL.GetAllUsers();
+
+        //private void LoadDataCustomer() => dgCus.DataSource = customerBLL.GetAllCustomers();
+
+        //private void LoadDataBill() => dgBill.DataSource = billBLL.GetAllBills();
 
         private void gbOut_Click(object sender, EventArgs e)
         {
@@ -60,56 +96,8 @@ namespace Eden
                 loginForm.Show();
 
                 // Đóng form chính
-                this.Hide();
+                Hide();
             }
         }
-
-        //private void btnAdd_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        if (productBLL.AddProduct(txtName.Text, decimal.Parse(txtPrice.Text), int.Parse(txtStock.Text), txtCategoryId.Text))
-        //        {
-        //            MessageBox.Show("Thêm sản phẩm thành công!");
-        //            LoadData();
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Lỗi: " + ex.Message);
-        //    }
-        //}
-
-        //private void btnUpdate_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        if (productBLL.UpdateProduct(int.Parse(txtId.Text), txtName.Text, decimal.Parse(txtPrice.Text), int.Parse(txtStock.Text), txtCategoryId.Text))
-        //        {
-        //            MessageBox.Show("Cập nhật thành công!");
-        //            LoadData();
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Lỗi: " + ex.Message);
-        //    }
-        //}
-
-        //private void btnDelete_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        if (productBLL.DeleteProduct(int.Parse(txtId.Text)))
-        //        {
-        //            MessageBox.Show("Xóa thành công!");
-        //            LoadData();
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Lỗi: " + ex.Message);
-        //    }
-        //}
     }
 }
