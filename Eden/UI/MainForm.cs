@@ -96,7 +96,7 @@ namespace Eden
                 loginForm.Show();
 
                 // Đóng form chính
-                Hide();
+                this.Close();
             }
         }
     }

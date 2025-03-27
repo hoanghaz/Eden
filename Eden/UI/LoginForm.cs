@@ -37,10 +37,15 @@ namespace Eden
             LoginBLL loginBLL = new LoginBLL();
             if (loginBLL.ValidateUser(username, password))
             {
-                //MessageBox.Show($"Đăng nhập thành công! Chào {CurrentUser.Username}, bạn thuộc nhóm {CurrentUser.Role}.",
-                //                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                this.Hide(); // Ẩn LoginForm
+
+                MainForm mainForm = new MainForm();
+                mainForm.ShowDialog(); // Đảm bảo vòng đời form hợp lý
+
+                // Khi MainForm đóng, LoginForm sẽ hiện lại
+                txtPw.Clear();
+                txtUser.Clear();
+                this.Show();
             }
             else
             {
