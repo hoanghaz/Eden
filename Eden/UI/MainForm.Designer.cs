@@ -44,10 +44,8 @@
             this.gbOut = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnHD = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnND = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2GradientButton3 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnKH = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnPL = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnNCC = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnSP = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -108,15 +106,13 @@
             // 
             this.guna2Panel2.Controls.Add(this.guna2Separator1);
             this.guna2Panel2.Controls.Add(this.btnTK);
+            this.guna2Panel2.Controls.Add(this.btnND);
+            this.guna2Panel2.Controls.Add(this.btnPL);
             this.guna2Panel2.Controls.Add(this.btnNK);
             this.guna2Panel2.Controls.Add(this.btnNND);
             this.guna2Panel2.Controls.Add(this.gbOut);
             this.guna2Panel2.Controls.Add(this.btnHD);
-            this.guna2Panel2.Controls.Add(this.btnND);
-            this.guna2Panel2.Controls.Add(this.guna2GradientButton3);
             this.guna2Panel2.Controls.Add(this.btnKH);
-            this.guna2Panel2.Controls.Add(this.btnPL);
-            this.guna2Panel2.Controls.Add(this.guna2GradientButton2);
             this.guna2Panel2.Controls.Add(this.btnNCC);
             this.guna2Panel2.Controls.Add(this.btnSP);
             this.guna2Panel2.Controls.Add(this.guna2PictureBox1);
@@ -300,33 +296,6 @@
             this.btnND.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnND.TextOffset = new System.Drawing.Point(50, 0);
             // 
-            // guna2GradientButton3
-            // 
-            this.guna2GradientButton3.Animated = true;
-            this.guna2GradientButton3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton3.CustomImages.Image = global::Eden.Properties.Resources.product;
-            this.guna2GradientButton3.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2GradientButton3.CustomImages.ImageOffset = new System.Drawing.Point(10, 0);
-            this.guna2GradientButton3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton3.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton3.FillColor = System.Drawing.Color.Empty;
-            this.guna2GradientButton3.FillColor2 = System.Drawing.Color.Empty;
-            this.guna2GradientButton3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GradientButton3.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton3.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(125)))), ((int)(((byte)(167)))));
-            this.guna2GradientButton3.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(49)))), ((int)(((byte)(80)))));
-            this.guna2GradientButton3.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton3.Location = new System.Drawing.Point(0, 298);
-            this.guna2GradientButton3.Name = "guna2GradientButton3";
-            this.guna2GradientButton3.Size = new System.Drawing.Size(209, 69);
-            this.guna2GradientButton3.TabIndex = 1;
-            this.guna2GradientButton3.Text = "Sản phẩm";
-            this.guna2GradientButton3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2GradientButton3.TextOffset = new System.Drawing.Point(50, 0);
-            // 
             // btnKH
             // 
             this.btnKH.Animated = true;
@@ -380,32 +349,7 @@
             this.btnPL.Text = "Phân loại";
             this.btnPL.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnPL.TextOffset = new System.Drawing.Point(50, 0);
-            // 
-            // guna2GradientButton2
-            // 
-            this.guna2GradientButton2.Animated = true;
-            this.guna2GradientButton2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton2.CustomImages.Image = global::Eden.Properties.Resources.product;
-            this.guna2GradientButton2.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2GradientButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton2.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton2.FillColor = System.Drawing.Color.Empty;
-            this.guna2GradientButton2.FillColor2 = System.Drawing.Color.Empty;
-            this.guna2GradientButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GradientButton2.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton2.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(125)))), ((int)(((byte)(167)))));
-            this.guna2GradientButton2.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(49)))), ((int)(((byte)(80)))));
-            this.guna2GradientButton2.HoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton2.Location = new System.Drawing.Point(0, 223);
-            this.guna2GradientButton2.Name = "guna2GradientButton2";
-            this.guna2GradientButton2.Size = new System.Drawing.Size(209, 69);
-            this.guna2GradientButton2.TabIndex = 1;
-            this.guna2GradientButton2.Text = "Sản phẩm";
-            this.guna2GradientButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2GradientButton2.TextOffset = new System.Drawing.Point(50, 0);
+            this.btnPL.Click += new System.EventHandler(this.btnPL_Click);
             // 
             // btnNCC
             // 
@@ -505,11 +449,9 @@
         private Guna.UI2.WinForms.Guna2GradientButton btnSP;
         private Guna.UI2.WinForms.Guna2GradientButton btnNK;
         private Guna.UI2.WinForms.Guna2GradientButton btnND;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton3;
         private Guna.UI2.WinForms.Guna2GradientButton btnKH;
         private Guna.UI2.WinForms.Guna2GradientButton btnPL;
         private Guna.UI2.WinForms.Guna2GradientButton btnNND;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton2;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private Guna.UI2.WinForms.Guna2GradientButton gbOut;
         private Guna.UI2.WinForms.Guna2GradientButton btnHD;
