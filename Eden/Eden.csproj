@@ -87,7 +87,6 @@
     <Compile Include="CHUCNANG.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\DatabaseHelper.cs" />
     <Compile Include="DAL\HOADONDAL.cs" />
     <Compile Include="DAL\LOAISANPHAMDAL.cs" />
     <Compile Include="DAL\CHITIETHOADONDAL.cs" />
