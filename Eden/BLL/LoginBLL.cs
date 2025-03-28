@@ -5,39 +5,31 @@ using Guna.UI2.WinForms;
 
 namespace Eden
 {
-    public class LoginBLL
+    using System.Linq;
+
+    namespace Eden
     {
-        private readonly LoginDAL loginDAL = new LoginDAL();
-
-        // Kiểm tra đăng nhập và lấy thông tin người dùng
-        public bool ValidateUser(string username, string password)
+        public class LoginBLL
         {
-            DataTable dt = loginDAL.ValidateUser(username, password);
+            private readonly LoginDAL loginDAL = new LoginDAL();
 
-            if (dt.Rows.Count > 0)
+            public bool ValidateUser(string username, string password)
             {
-                int userId = Convert.ToInt32(dt.Rows[0]["id"]);
-                string userRole = dt.Rows[0]["TenNhomNguoiDung"].ToString();
-                int userGroupId = Convert.ToInt32(dt.Rows[0]["idNhomNguoiDung"]);
-
-                // Lưu thông tin người dùng hiện tại
-                CurrentUser.Id = userId;
-                CurrentUser.Username = dt.Rows[0]["TenNguoiDung"].ToString();
-                CurrentUser.Role = userRole;
-                CurrentUser.UserGroupId = userGroupId;
-                // Xóa danh sách quyền cũ trước khi thêm quyền mới
-                CurrentUser.Permissions.Clear();
-
-                // Lấy quyền của nhóm người dùng
-                DataTable permissions = loginDAL.GetUserPermissions(userGroupId);
-                foreach (DataRow row in permissions.Rows)
+                var user = loginDAL.ValidateUser(username, password);
+                if (user != null)
                 {
-                    CurrentUser.Permissions.Add(row["TenChucNang"].ToString());
-                }
+                    CurrentUser.Id = user.id;
+                    CurrentUser.Username = user.TenNguoiDung;
+                    CurrentUser.Role = user.NHOMNGUOIDUNG?.TenNhomNguoiDung;
+                    CurrentUser.UserGroupId = user.idNhomNguoiDung;
 
-                return true;
+                    // Lấy quyền từ navigation properties
+                    CurrentUser.Permissions = loginDAL.GetUserPermissions(user.idNhomNguoiDung).ToList();
+
+                    return true;
+                }
+                return false;
             }
-            return false;
         }
     }
 

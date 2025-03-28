@@ -214,11 +214,15 @@ namespace Eden
 
                 // Mở lại màn hình đăng nhập
                 LoginForm loginForm = new LoginForm();
-                loginForm.Show();
 
                 // Đóng form chính
                 this.Close();
             }
+        }
+
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        {
+            picVan.Visible = true;
         }
     }
 }
