@@ -1,42 +1,42 @@
 ﻿using System;
-using System.Data;
+using System.Collections.Generic;
+using System.Linq;
+using Eden.Eden;
 
 namespace Eden
 {
-    public class ChiTietPhieuNhapBLL
+    public class CHITIETPHIEUNHAPBLL : IDisposable
     {
-        private readonly ChiTietPhieuNhapDAL chiTietPhieuNhapDAL = new ChiTietPhieuNhapDAL();
+        private CHITIETPHIEUNHAPDAL dal = new CHITIETPHIEUNHAPDAL();
 
-        public DataTable GetAllChiTietPhieuNhap()
+        public CHITIETPHIEUNHAPBLL()
         {
-            return chiTietPhieuNhapDAL.GetAllChiTietPhieuNhap();
+            dal = new CHITIETPHIEUNHAPDAL();
         }
 
-        public bool InsertChiTietPhieuNhap(int idPhieuNhap, int idSanPham, int soLuong, decimal donGia, decimal thanhTien)
+        public List<CHITIETPHIEUNHAP> GetAll()
         {
-            if (idPhieuNhap <= 0 || idSanPham <= 0 || soLuong <= 0 || donGia < 0 || thanhTien < 0)
-            {
-                throw new ArgumentException("Thông tin chi tiết phiếu nhập không hợp lệ.");
-            }
-            return chiTietPhieuNhapDAL.InsertChiTietPhieuNhap(idPhieuNhap, idSanPham, soLuong, donGia, thanhTien);
+            return dal.GetAll();
         }
 
-        public bool UpdateChiTietPhieuNhap(int idPhieuNhap, int idSanPham, int soLuong, decimal donGia, decimal thanhTien)
+        public void Add(CHITIETPHIEUNHAP ctpn)
         {
-            if (idPhieuNhap <= 0 || idSanPham <= 0 || soLuong <= 0 || donGia < 0 || thanhTien < 0)
-            {
-                throw new ArgumentException("Thông tin cập nhật chi tiết phiếu nhập không hợp lệ.");
-            }
-            return chiTietPhieuNhapDAL.UpdateChiTietPhieuNhap(idPhieuNhap, idSanPham, soLuong, donGia, thanhTien);
+            dal.Add(ctpn);
         }
 
-        public bool DeleteChiTietPhieuNhap(int idPhieuNhap, int idSanPham)
+        public void Update(CHITIETPHIEUNHAP ctpn)
         {
-            if (idPhieuNhap <= 0 || idSanPham <= 0)
-            {
-                throw new ArgumentException("ID phiếu nhập hoặc sản phẩm không hợp lệ.");
-            }
-            return chiTietPhieuNhapDAL.DeleteChiTietPhieuNhap(idPhieuNhap, idSanPham);
+            dal.Update(ctpn);
+        }
+
+        public void Delete(CHITIETPHIEUNHAP ctpn)
+        {
+            dal.Delete(ctpn);
+        }
+
+        public void Dispose()
+        {
+            dal.Dispose();
         }
     }
 }

@@ -1,51 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace Eden
 {
-    public class PhieuNhapDAL
+    public class PHIEUNHAPDAL : IDisposable
     {
-        private readonly DatabaseHelper dbHelper = new DatabaseHelper();
+        private QLBanHoaEntities db = new QLBanHoaEntities();
 
-        public DataTable GetAllPhieuNhap()
-        {
-            string query = "SELECT id, MaPhieuNhap as [Mã phiếu nhập], NgayNhap as [Ngày nhập], idNhaCungCap as [Nhà cung cấp], idNguoiDung as [Người lập], TongTien as [Tổng tiền] FROM PHIEUNHAP";
-            return dbHelper.ExecuteQuery(query);
-        }
-
-        public bool InsertPhieuNhap(DateTime ngayNhap, int idNhaCungCap, int idNguoiDung, decimal tongTien)
-        {
-            string query = "INSERT INTO PHIEUNHAP (NgayNhap, idNhaCungCap, idNguoiDung, TongTien) VALUES (@NgayNhap, @idNCC, @idND, @TongTien)";
-            SqlParameter[] parameters =
-            {
-            new SqlParameter("@NgayNhap", ngayNhap),
-            new SqlParameter("@idNCC", idNhaCungCap),
-            new SqlParameter("@idND", idNguoiDung),
-            new SqlParameter("@TongTien", tongTien)
-        };
-            return dbHelper.ExecuteNonQuery(query, parameters) > 0;
-        }
-
-        public bool UpdatePhieuNhap(int id, DateTime ngayNhap, int idNhaCungCap, int idNguoiDung, decimal tongTien)
-        {
-            string query = "UPDATE PHIEUNHAP SET NgayNhap = @NgayNhap, idNhaCungCap = @idNCC, idNguoiDung = @idND, TongTien = @TongTien WHERE id = @id";
-            SqlParameter[] parameters =
-            {
-            new SqlParameter("@id", id),
-            new SqlParameter("@NgayNhap", ngayNhap),
-            new SqlParameter("@idNCC", idNhaCungCap),
-            new SqlParameter("@idND", idNguoiDung),
-            new SqlParameter("@TongTien", tongTien)
-        };
-            return dbHelper.ExecuteNonQuery(query, parameters) > 0;
-        }
-
-        public bool DeletePhieuNhap(int id)
-        {
-            string query = "DELETE FROM PHIEUNHAP WHERE id = @id";
-            SqlParameter[] parameters = { new SqlParameter("@id", id) };
-            return dbHelper.ExecuteNonQuery(query, parameters) > 0;
-        }
+        public List<PHIEUNHAP> GetAll() => db.PHIEUNHAPs.ToList();
+        public void Add(PHIEUNHAP entity) { db.PHIEUNHAPs.Add(entity); db.SaveChanges(); }
+        public void Update(PHIEUNHAP entity) { db.Entry(entity).State = System.Data.Entity.EntityState.Modified; db.SaveChanges(); }
+        public void Delete(PHIEUNHAP entity) { db.PHIEUNHAPs.Remove(entity); db.SaveChanges(); }
+        public void Dispose() { db.Dispose(); }
     }
 }

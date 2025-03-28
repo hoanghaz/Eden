@@ -1,51 +1,41 @@
 ﻿using System;
-using System.Data;
-using System.Text.RegularExpressions;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Eden
 {
-    public class NhaCungCapBLL
+    public class NHACUNGCAPBLL : IDisposable
     {
-        private readonly NhaCungCapDAL nhaCungCapDAL = new NhaCungCapDAL();
+        private NHACUNGCAPDAL dal = new NHACUNGCAPDAL();
 
-        public DataTable GetAllNhaCungCap()
+        public NHACUNGCAPBLL()
         {
-            return nhaCungCapDAL.GetAllNhaCungCap();
+            dal = new NHACUNGCAPDAL();
         }
 
-        public bool InsertNhaCungCap(string tenNCC, string diaChi, string soDienThoai, string email)
+        public List<NHACUNGCAP> GetAll()
         {
-            if (string.IsNullOrWhiteSpace(tenNCC) || string.IsNullOrWhiteSpace(soDienThoai))
-            {
-                throw new ArgumentException("Tên nhà cung cấp và số điện thoại không được để trống.");
-            }
-            if (!Regex.IsMatch(soDienThoai, @"^\d{10,11}$"))
-            {
-                throw new ArgumentException("Số điện thoại không hợp lệ.");
-            }
-            return nhaCungCapDAL.InsertNhaCungCap(tenNCC, diaChi, soDienThoai, email);
+            return dal.GetAll();
         }
 
-        public bool UpdateNhaCungCap(int id, string tenNCC, string diaChi, string soDienThoai, string email)
+        public void Add(NHACUNGCAP ncc)
         {
-            if (id <= 0 || string.IsNullOrWhiteSpace(tenNCC) || string.IsNullOrWhiteSpace(soDienThoai))
-            {
-                throw new ArgumentException("Thông tin nhà cung cấp không hợp lệ.");
-            }
-            if (!Regex.IsMatch(soDienThoai, @"^\d{10,11}$"))
-            {
-                throw new ArgumentException("Số điện thoại không hợp lệ.");
-            }
-            return nhaCungCapDAL.UpdateNhaCungCap(id, tenNCC, diaChi, soDienThoai, email);
+            dal.Add(ncc);
         }
 
-        public bool DeleteNhaCungCap(int id)
+        public void Update(NHACUNGCAP ncc)
         {
-            if (id <= 0)
-            {
-                throw new ArgumentException("ID nhà cung cấp không hợp lệ.");
-            }
-            return nhaCungCapDAL.DeleteNhaCungCap(id);
+            dal.Update(ncc);
+        }
+
+        public void Delete(NHACUNGCAP ncc)
+        {
+            dal.Delete(ncc);
+        }
+
+        public void Dispose()
+        {
+            dal.Dispose();
         }
     }
 }

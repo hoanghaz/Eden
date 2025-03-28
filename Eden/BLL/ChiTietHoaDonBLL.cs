@@ -1,42 +1,41 @@
 ﻿using System;
-using System.Data;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Eden
 {
-    public class ChiTietHoaDonBLL
+    public class CHITIETHOADONBLL : IDisposable
     {
-        private readonly ChiTietHoaDonDAL chiTietHoaDonDAL = new ChiTietHoaDonDAL();
+        private CHITIETHOADONDAL dal = new CHITIETHOADONDAL();
 
-        public DataTable GetAllChiTietHoaDon()
+        public CHITIETHOADONBLL()
         {
-            return chiTietHoaDonDAL.GetAllChiTietHoaDon();
+            dal = new CHITIETHOADONDAL();
         }
 
-        public bool InsertChiTietHoaDon(int idHoaDon, int idSanPham, int soLuong, decimal donGia, decimal thanhTien)
+        public List<CHITIETHOADON> GetAll()
         {
-            if (idHoaDon <= 0 || idSanPham <= 0 || soLuong <= 0 || donGia < 0 || thanhTien < 0)
-            {
-                throw new ArgumentException("Thông tin chi tiết hóa đơn không hợp lệ.");
-            }
-            return chiTietHoaDonDAL.InsertChiTietHoaDon(idHoaDon, idSanPham, soLuong, donGia, thanhTien);
+            return dal.GetAll();
         }
 
-        public bool UpdateChiTietHoaDon(int idHoaDon, int idSanPham, int soLuong, decimal donGia, decimal thanhTien)
+        public void Add(CHITIETHOADON cthd)
         {
-            if (idHoaDon <= 0 || idSanPham <= 0 || soLuong <= 0 || donGia < 0 || thanhTien < 0)
-            {
-                throw new ArgumentException("Thông tin cập nhật chi tiết hóa đơn không hợp lệ.");
-            }
-            return chiTietHoaDonDAL.UpdateChiTietHoaDon(idHoaDon, idSanPham, soLuong, donGia, thanhTien);
+            dal.Add(cthd);
         }
 
-        public bool DeleteChiTietHoaDon(int idHoaDon, int idSanPham)
+        public void Update(CHITIETHOADON cthd)
         {
-            if (idHoaDon <= 0 || idSanPham <= 0)
-            {
-                throw new ArgumentException("ID hóa đơn hoặc sản phẩm không hợp lệ.");
-            }
-            return chiTietHoaDonDAL.DeleteChiTietHoaDon(idHoaDon, idSanPham);
+            dal.Update(cthd);
+        }
+
+        public void Delete(CHITIETHOADON cthd)
+        {
+            dal.Delete(cthd);
+        }
+
+        public void Dispose()
+        {
+            dal.Dispose();
         }
     }
 }

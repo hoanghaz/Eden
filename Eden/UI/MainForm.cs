@@ -16,11 +16,11 @@ namespace Eden
 {
     public partial class MainForm : Form
     {
-        private ProductBLL productBLL = new ProductBLL();
-        private CategoryBLL categoryBLL = new CategoryBLL();
-        private UserBLL userBLL = new UserBLL();
-        private CustomerBLL customerBLL = new CustomerBLL();
-        private BillBLL billBLL = new BillBLL();
+        //private ProductBLL productBLL = new ProductBLL();
+        //private CategoryBLL categoryBLL = new CategoryBLL();
+        //private UserBLL userBLL = new UserBLL();
+        //private CustomerBLL customerBLL = new CustomerBLL();
+        //private BillBLL billBLL = new BillBLL();
 
         public MainForm()
         {
