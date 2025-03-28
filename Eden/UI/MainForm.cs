@@ -19,14 +19,17 @@ namespace Eden
         public MainForm()
         {
             InitializeComponent();
-            InitializeSidebarButtons();
+
             guna2HtmlLabel1.Text = CurrentUser.Username;
+
+            InitializeSidebarButtons();
         }
 
         private List<Guna2GradientButton> sidebarButtons = new List<Guna2GradientButton>();
 
         private void InitializeSidebarButtons()
         {
+            this.SuspendLayout();
             int yPosition = 94;
 
             // Tạo danh sách các nút với thông tin: Text, Name, Image
@@ -61,6 +64,7 @@ namespace Eden
                 sidebarButtons.Add(btn);
                 yPosition += 65;
             }
+            this.ResumeLayout(false);
         }
 
         private Guna2GradientButton CreateSBB(string text, string name, int y, string imgName)
@@ -216,6 +220,16 @@ namespace Eden
         private void guna2PictureBox1_Click(object sender, EventArgs e)
         {
             picVan.Visible = true;
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000; // WS_EX_COMPOSITED => Giảm nhấp nháy
+                return cp;
+            }
         }
     }
 }

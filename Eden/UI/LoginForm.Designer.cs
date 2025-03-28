@@ -46,6 +46,8 @@
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel2.SuspendLayout();
@@ -273,6 +275,16 @@
             this.guna2DragControl2.TargetControl = this.guna2PictureBox2;
             this.guna2DragControl2.UseTransparentDrag = true;
             // 
+            // guna2AnimateWindow1
+            // 
+            this.guna2AnimateWindow1.AnimationType = Guna.UI2.WinForms.Guna2AnimateWindow.AnimateWindowType.AW_ACTIVATE;
+            this.guna2AnimateWindow1.TargetForm = this;
+            // 
+            // guna2ShadowForm1
+            // 
+            this.guna2ShadowForm1.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(156)))), ((int)(((byte)(212)))));
+            this.guna2ShadowForm1.TargetForm = this;
+            // 
             // LoginForm
             // 
             this.ClientSize = new System.Drawing.Size(1007, 688);
@@ -311,5 +323,7 @@
         private System.Windows.Forms.Label forgot;
         private Guna.UI2.WinForms.Guna2Button btnLog;
         private Guna.UI2.WinForms.Guna2Button btnReg;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
+        private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,20 @@ namespace Eden
         public LoginForm()
         {
             InitializeComponent();
+            // Tắt các tính năng không cần thiết ban đầu
+            this.DoubleBuffered = true;
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+            // Preload data (nếu cần)
+            Task.Run(() => PreloadResources());
+        }
+
+        private void PreloadResources()
+        {
+            using (var db = new QLBanHoaEntities())
+            {
+                // Load một bản ghi để khởi động EF
+                var temp = db.NGUOIDUNGs.FirstOrDefault();
+            }
         }
 
         private void forgot_Click(object sender, EventArgs e)
@@ -64,6 +79,16 @@ namespace Eden
                 txtPw.PasswordChar = (char)0;
             else
                 txtPw.PasswordChar = '*';
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000; // WS_EX_COMPOSITED => Giảm nhấp nháy
+                return cp;
+            }
         }
     }
 }
