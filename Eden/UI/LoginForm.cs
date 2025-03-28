@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Eden.Eden;
 using Guna.UI2.WinForms;
 
 namespace Eden

@@ -98,6 +98,7 @@
     <Compile Include="DAL\PHIEUNHAPDAL.cs" />
     <Compile Include="DAL\SANPHAMDAL.cs" />
     <Compile Include="DAL\NGUOIDUNGDAL.cs" />
+    <Compile Include="DTO\CurrentUser.cs" />
     <Compile Include="HOADON.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -238,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\SanPhamForm.resx">
       <DependentUpon>SanPhamForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ThongKeForm.resx">
+      <DependentUpon>ThongKeForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
     <EntityDeploy Include="Model1.edmx">

@@ -16,18 +16,11 @@ namespace Eden
 {
     public partial class MainForm : Form
     {
-        //private ProductBLL productBLL = new ProductBLL();
-        //private CategoryBLL categoryBLL = new CategoryBLL();
-        //private UserBLL userBLL = new UserBLL();
-        //private CustomerBLL customerBLL = new CustomerBLL();
-        //private BillBLL billBLL = new BillBLL();
-
         public MainForm()
         {
             InitializeComponent();
             InitializeSidebarButtons();
-            //init();
-            //MessageBox.Show("Welcome to Eden!" + string.Join(", ", CurrentUser.Permissions));
+            guna2HtmlLabel1.Text = CurrentUser.Username;
         }
 
         private List<Guna2GradientButton> sidebarButtons = new List<Guna2GradientButton>();
