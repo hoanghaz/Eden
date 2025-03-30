@@ -158,7 +158,7 @@
             this.gbOut.Location = new System.Drawing.Point(0, 705);
             this.gbOut.Name = "gbOut";
             this.gbOut.Size = new System.Drawing.Size(219, 69);
-            this.gbOut.TabIndex = 1;
+            this.gbOut.TabIndex = 0;
             this.gbOut.Text = "Đăng xuất";
             this.gbOut.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.gbOut.TextOffset = new System.Drawing.Point(50, 0);

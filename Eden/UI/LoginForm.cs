@@ -17,6 +17,9 @@ namespace Eden
         public LoginForm()
         {
             InitializeComponent();
+            txtPw.Text = "1";
+            txtUser.Text = "admin";
+            this.AcceptButton = btnLog;
             // Tắt các tính năng không cần thiết ban đầu
             this.DoubleBuffered = true;
             this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
@@ -62,8 +65,8 @@ namespace Eden
                 // Khi MainForm đóng, LoginForm sẽ hiện lại
                 txtPw.Clear();
                 txtUser.Clear();
-                txtUser.Focus();
                 this.Show();
+                txtUser.Focus();
             }
             else
             {

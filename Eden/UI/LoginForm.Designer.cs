@@ -95,9 +95,9 @@
             this.btnReg.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(22)))), ((int)(((byte)(43)))));
             this.btnReg.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnReg.ForeColor = System.Drawing.Color.White;
-            this.btnReg.Location = new System.Drawing.Point(110, 598);
+            this.btnReg.Location = new System.Drawing.Point(119, 605);
             this.btnReg.Name = "btnReg";
-            this.btnReg.Size = new System.Drawing.Size(131, 46);
+            this.btnReg.Size = new System.Drawing.Size(114, 36);
             this.btnReg.TabIndex = 0;
             this.btnReg.Text = "Register";
             this.btnReg.Visible = false;
@@ -114,10 +114,10 @@
             this.btnLog.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(115)))), ((int)(((byte)(173)))));
             this.btnLog.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnLog.ForeColor = System.Drawing.Color.White;
-            this.btnLog.Location = new System.Drawing.Point(110, 500);
+            this.btnLog.Location = new System.Drawing.Point(104, 536);
             this.btnLog.Name = "btnLog";
             this.btnLog.Size = new System.Drawing.Size(144, 63);
-            this.btnLog.TabIndex = 0;
+            this.btnLog.TabIndex = 2;
             this.btnLog.Text = "Login";
             this.btnLog.Click += new System.EventHandler(this.btnLog_Click);
             // 
@@ -210,7 +210,7 @@
             this.txtUser.PlaceholderText = "Username";
             this.txtUser.SelectedText = "";
             this.txtUser.Size = new System.Drawing.Size(293, 48);
-            this.txtUser.TabIndex = 1;
+            this.txtUser.TabIndex = 0;
             // 
             // guna2PictureBox1
             // 
