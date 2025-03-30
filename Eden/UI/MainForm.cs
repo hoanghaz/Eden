@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
-using Eden.UI;
 using Guna.UI2.WinForms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrayNotify;
 
