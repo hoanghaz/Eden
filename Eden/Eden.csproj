@@ -148,11 +148,23 @@
     <Compile Include="UI\HoaDonForm.Designer.cs">
       <DependentUpon>HoaDonForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\KhachHangadd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\KhachHangadd.Designer.cs">
+      <DependentUpon>KhachHangadd.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\KhachHangForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\KhachHangForm.Designer.cs">
       <DependentUpon>KhachHangForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\KhachHangsua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\KhachHangsua.Designer.cs">
+      <DependentUpon>KhachHangsua.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\LoginForm.cs">
       <SubType>Form</SubType>
@@ -229,8 +241,14 @@
     <EmbeddedResource Include="UI\HoaDonForm.resx">
       <DependentUpon>HoaDonForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\KhachHangadd.resx">
+      <DependentUpon>KhachHangadd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\KhachHangForm.resx">
       <DependentUpon>KhachHangForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\KhachHangsua.resx">
+      <DependentUpon>KhachHangsua.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
