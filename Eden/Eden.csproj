@@ -198,6 +198,12 @@
     <Compile Include="UI\PhanLoaiForm.Designer.cs">
       <DependentUpon>PhanLoaiForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\PhanLoaiForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PhanLoaiForm1.Designer.cs">
+      <DependentUpon>PhanLoaiForm1.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\SanPhamForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PhanLoaiForm.resx">
       <DependentUpon>PhanLoaiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PhanLoaiForm1.resx">
+      <DependentUpon>PhanLoaiForm1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\SanPhamForm.resx">
       <DependentUpon>SanPhamForm.cs</DependentUpon>
@@ -309,6 +318,9 @@
     <None Include="Resources\van1.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -319,9 +331,6 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

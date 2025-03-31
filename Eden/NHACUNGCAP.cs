@@ -18,7 +18,6 @@ namespace Eden
         public NHACUNGCAP()
         {
             this.PHIEUNHAPs = new HashSet<PHIEUNHAP>();
-            this.SANPHAMs = new HashSet<SANPHAM>();
         }
     
         public int id { get; set; }
@@ -30,7 +29,5 @@ namespace Eden
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PHIEUNHAP> PHIEUNHAPs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SANPHAM> SANPHAMs { get; set; }
     }
 }

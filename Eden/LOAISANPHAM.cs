@@ -14,17 +14,8 @@ namespace Eden
     
     public partial class LOAISANPHAM
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public LOAISANPHAM()
-        {
-            this.SANPHAMs = new HashSet<SANPHAM>();
-        }
-    
         public int id { get; set; }
         public string MaLoaiSanPham { get; set; }
         public string TenLoaiSanPham { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SANPHAM> SANPHAMs { get; set; }
     }
 }
