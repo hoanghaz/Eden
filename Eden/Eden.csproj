@@ -210,11 +210,17 @@
     <Compile Include="UI\PhanLoaiForm.Designer.cs">
       <DependentUpon>PhanLoaiForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\PhanLoaiForm1.cs">
+    <Compile Include="UI\PhanLoaiFormAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\PhanLoaiForm1.Designer.cs">
-      <DependentUpon>PhanLoaiForm1.cs</DependentUpon>
+    <Compile Include="UI\PhanLoaiFormAdd.Designer.cs">
+      <DependentUpon>PhanLoaiFormAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PhanLoaiFormSua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PhanLoaiFormSua.Designer.cs">
+      <DependentUpon>PhanLoaiFormSua.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\SanPhamForm.cs">
       <SubType>Form</SubType>
@@ -262,8 +268,11 @@
     <EmbeddedResource Include="UI\PhanLoaiForm.resx">
       <DependentUpon>PhanLoaiForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\PhanLoaiForm1.resx">
-      <DependentUpon>PhanLoaiForm1.cs</DependentUpon>
+    <EmbeddedResource Include="UI\PhanLoaiFormAdd.resx">
+      <DependentUpon>PhanLoaiFormAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PhanLoaiFormSua.resx">
+      <DependentUpon>PhanLoaiFormSua.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\SanPhamForm.resx">
       <DependentUpon>SanPhamForm.cs</DependentUpon>
