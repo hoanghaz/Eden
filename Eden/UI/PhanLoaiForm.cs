@@ -31,6 +31,7 @@ namespace Eden
             {
                 guna2DataGridView1.DataSource = null; // Xóa dữ liệu cũ trước khi load lại
                 guna2DataGridView1.DataSource = loaiSanPhamBLL.GetAll();
+                guna2DataGridView1.Refresh();
             }
             catch (Exception ex)
             {
@@ -51,17 +52,17 @@ namespace Eden
         {
             if (guna2DataGridView1.CurrentRow != null)
             {
-                // Lấy giá trị "MaLoaiSanPham" từ cột trong DataGridView
+                // Lấy mã loại sản phẩm từ DataGridView
                 string maLSP = guna2DataGridView1.CurrentRow.Cells["MaLoaiSanPham"].Value.ToString();
 
-                // Tạo đối tượng PhanLoaiFormSua và truyền maLSP vào constructor
+                // Tạo form sửa
                 PhanLoaiFormSua phanLoaiFormSua = new PhanLoaiFormSua(maLSP);
 
-                // Hiển thị form sửa, khi form đóng xong thì cập nhật lại danh sách
-                phanLoaiFormSua.ShowDialog();
-                LoadLoaiSanPham(); // Load lại danh sách sau khi form sửa đóng
-                guna2DataGridView1.Refresh();
+                // Đăng ký sự kiện khi form đóng để cập nhật lại danh sách
+                phanLoaiFormSua.FormClosed += (s, args) => LoadLoaiSanPham();
 
+                // Hiển thị form sửa
+                phanLoaiFormSua.ShowDialog();
             }
             else
             {

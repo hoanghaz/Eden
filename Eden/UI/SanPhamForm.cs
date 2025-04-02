@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
+using Eden.UI;
 
 namespace Eden
 {
     public partial class SanPhamForm : Form
     {
         private SANPHAMBLL sanphamBLL; // Đổi tên theo chuẩn CamelCase
-
+        
         public SanPhamForm()
         {
             InitializeComponent();
@@ -24,7 +25,17 @@ namespace Eden
 
         private void LoadSanPham()
         {
-            guna2DataGridView1.DataSource = sanphamBLL.GetAll();
+            dgSanPham.DataSource = sanphamBLL.GetAll();
+        }
+        
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            using (SanPhamFormAdd formAdd = new SanPhamFormAdd())
+            {
+                formAdd.ShowDialog();
+                LoadSanPham(); // Cập nhật danh sách sau khi thêm
+            }
         }
     }
 }

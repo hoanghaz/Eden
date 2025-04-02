@@ -29,10 +29,14 @@ namespace Eden
         public int SoLuong { get; set; }
         public string MauSac { get; set; }
         public string AnhChiTiet { get; set; }
+        public Nullable<int> idNhaCungCap { get; set; }
+        public int idLoaiSanPham { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHITIETHOADON> CHITIETHOADONs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHITIETPHIEUNHAP> CHITIETPHIEUNHAPs { get; set; }
+        public virtual LOAISANPHAM LOAISANPHAM { get; set; }
+        public virtual NHACUNGCAP NHACUNGCAP { get; set; }
     }
 }

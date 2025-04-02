@@ -228,6 +228,12 @@
     <Compile Include="UI\SanPhamForm.Designer.cs">
       <DependentUpon>SanPhamForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\SanPhamFormAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SanPhamFormAdd.Designer.cs">
+      <DependentUpon>SanPhamFormAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\ThongKeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -276,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\SanPhamForm.resx">
       <DependentUpon>SanPhamForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SanPhamFormAdd.resx">
+      <DependentUpon>SanPhamFormAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ThongKeForm.resx">
       <DependentUpon>ThongKeForm.cs</DependentUpon>

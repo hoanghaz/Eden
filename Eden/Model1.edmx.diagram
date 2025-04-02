@@ -4,28 +4,30 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="10324e01648046a2a41ff382dc23eda6" Name="Diagram1">
-        <EntityTypeShape EntityType="QLBanHoaModel.CHITIETHOADON" Width="1.5" PointX="12.75" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBanHoaModel.CHITIETPHIEUNHAP" Width="1.5" PointX="15.75" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBanHoaModel.CHUCNANG" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBanHoaModel.HOADON" Width="1.5" PointX="7.5" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBanHoaModel.KHACHHANG" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBanHoaModel.LOAISANPHAM" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBanHoaModel.NGUOIDUNG" Width="1.5" PointX="5.25" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBanHoaModel.NHACUNGCAP" Width="1.5" PointX="8.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBanHoaModel.NHOMNGUOIDUNG" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBanHoaModel.PHIEUNHAP" Width="1.5" PointX="10.5" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBanHoaModel.SANPHAM" Width="1.5" PointX="10.5" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLBanHoaModel.THAMSO" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
-        <AssociationConnector Association="QLBanHoaModel.FK__CHITIETHO__idHoa__4E88ABD4" ManuallyRouted="false" />
-        <AssociationConnector Association="QLBanHoaModel.FK__CHITIETHO__idSan__4F7CD00D" ManuallyRouted="false" />
-        <AssociationConnector Association="QLBanHoaModel.FK__CHITIETPH__idPhi__5629CD9C" ManuallyRouted="false" />
-        <AssociationConnector Association="QLBanHoaModel.FK__CHITIETPH__idSan__571DF1D5" ManuallyRouted="false" />
-        <AssociationConnector Association="QLBanHoaModel.FK__HOADON__idKhachH__4AB81AF0" ManuallyRouted="false" />
-        <AssociationConnector Association="QLBanHoaModel.FK__HOADON__idNguoiD__4BAC3F29" ManuallyRouted="false" />
+      <Diagram DiagramId="6ca0de7be0e34fbfad3b1ae0e18e6ca8" Name="Diagram1">
+        <EntityTypeShape EntityType="QLBanHoaModel.CHITIETHOADON" Width="1.5" PointX="11.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanHoaModel.CHITIETPHIEUNHAP" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanHoaModel.CHUCNANG" Width="1.5" PointX="1.5" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanHoaModel.HOADON" Width="1.5" PointX="9" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanHoaModel.KHACHHANG" Width="1.5" PointX="6.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanHoaModel.LOAISANPHAM" Width="1.5" PointX="3.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanHoaModel.NGUOIDUNG" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanHoaModel.NHACUNGCAP" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanHoaModel.NHOMNGUOIDUNG" Width="1.5" PointX="1.5" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanHoaModel.PHIEUNHAP" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanHoaModel.SANPHAM" Width="1.5" PointX="6" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanHoaModel.THAMSO" Width="1.5" PointX="3.75" PointY="9.125" IsExpanded="true" />
+        <AssociationConnector Association="QLBanHoaModel.FK__CHITIETHO__idHoa__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanHoaModel.FK__CHITIETHO__idSan__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanHoaModel.FK__CHITIETPH__idPhi__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanHoaModel.FK__CHITIETPH__idSan__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanHoaModel.FK__HOADON__idKhachH__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanHoaModel.FK__HOADON__idNguoiD__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanHoaModel.FK__SANPHAM__idLoaiS__47DBAE45" ManuallyRouted="false" />
         <AssociationConnector Association="QLBanHoaModel.FK__NGUOIDUNG__idNho__403A8C7D" ManuallyRouted="false" />
-        <AssociationConnector Association="QLBanHoaModel.FK__PHIEUNHAP__idNgu__534D60F1" ManuallyRouted="false" />
-        <AssociationConnector Association="QLBanHoaModel.FK__PHIEUNHAP__idNha__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanHoaModel.FK__PHIEUNHAP__idNgu__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanHoaModel.FK__PHIEUNHAP__idNha__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanHoaModel.FK__SANPHAM__idNhaCu__46E78A0C" ManuallyRouted="false" />
         <AssociationConnector Association="QLBanHoaModel.PHANQUYEN" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
