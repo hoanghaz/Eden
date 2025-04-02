@@ -9,7 +9,6 @@ namespace Eden
     public class KHACHHANGDAL : IDisposable
     {
         private QLBanHoaEntities db = new QLBanHoaEntities();
-
         public List<KHACHHANG> GetAll() => db.KHACHHANGs.ToList();
         public void Add(KHACHHANG entity) { db.KHACHHANGs.Add(entity); db.SaveChanges(); }
         public void Update(KHACHHANG entity)
@@ -33,7 +32,10 @@ namespace Eden
                 throw new Exception("Khách hàng không tồn tại.");
             }
         }
-        public void Delete(KHACHHANG entity) { db.KHACHHANGs.Remove(entity); db.SaveChanges(); }
+        public void Delete(KHACHHANG entity) {
+            db.KHACHHANGs.Remove(entity);
+            db.SaveChanges();
+        }
         public void Dispose() { db.Dispose(); }
     }
 }

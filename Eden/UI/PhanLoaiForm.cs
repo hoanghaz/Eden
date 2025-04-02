@@ -55,17 +55,19 @@ namespace Eden
                 string maLSP = guna2DataGridView1.CurrentRow.Cells["MaLoaiSanPham"].Value.ToString();
 
                 // Tạo đối tượng PhanLoaiFormSua và truyền maLSP vào constructor
-                using (PhanLoaiFormSua phanLoaiFormSua = new PhanLoaiFormSua(maLSP))
-                {
-                    // Đăng ký sự kiện khi form PhanLoaiFormSua đóng để cập nhật lại dữ liệu
-                    phanLoaiFormSua.FormClosed += (s, args) => LoadLoaiSanPham(); // Cập nhật dữ liệu sau khi sửa
-                    phanLoaiFormSua.ShowDialog();
-                }
+                PhanLoaiFormSua phanLoaiFormSua = new PhanLoaiFormSua(maLSP);
+
+                // Hiển thị form sửa, khi form đóng xong thì cập nhật lại danh sách
+                phanLoaiFormSua.ShowDialog();
+                LoadLoaiSanPham(); // Load lại danh sách sau khi form sửa đóng
+                guna2DataGridView1.Refresh();
+
             }
             else
             {
                 MessageBox.Show("Vui lòng chọn loại sản phẩm cần sửa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)

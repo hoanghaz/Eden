@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
+using System.Windows.Forms;
 namespace Eden
 {
     public class LOAISANPHAMBLL : IDisposable
     {
         private LOAISANPHAMDAL dal = new LOAISANPHAMDAL();
-
         public LOAISANPHAMBLL()
         {
             dal = new LOAISANPHAMDAL();
@@ -33,6 +33,7 @@ namespace Eden
         {
             dal.Delete(lsp);
         }
+        
 
         public void Dispose()
         {
