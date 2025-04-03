@@ -210,7 +210,7 @@ VALUES
 GO
 
 -- Thêm dữ liệu vào bảng SANPHAM
-INSERT INTO SANPHAM (TenSanPham, MoTa, Gia, SoLuong, , MauSac, AnhChiTiet, idNhaCungCap, idLoaiSanPham)
+INSERT INTO SANPHAM (TenSanPham, MoTa, Gia, SoLuong, MauSac, AnhChiTiet, idNhaCungCap, idLoaiSanPham)
 VALUES 
     (N'Hoa hồng đỏ', N'Hoa hồng đỏ tươi', 50000, 100,  N'Đỏ', 'hoahongdo.jpg', 1, 1),
     (N'Hoa cúc trắng', N'Hoa cúc trắng tinh khiết', 30000, 150,  N'Trắng', 'hoacuctrang.jpg', 2, 2),
