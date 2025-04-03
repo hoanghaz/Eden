@@ -46,9 +46,6 @@ namespace Eden.UI
             }
         }
 
-
-
-
         private void add_Click(object sender, EventArgs e)
         {
             try
@@ -57,9 +54,9 @@ namespace Eden.UI
                 {
                     MaKhachHang = maKH,
                     TenKhachHang = guna2TextBox2.Text.Trim(),
-                    DiaChi = guna2TextBox3.Text.Trim(),// Sửa lại đây  
-                    SoDienThoai = guna2TextBox4.Text.Trim(),  // Sửa lại đây  
-                    Email = guna2TextBox5.Text.Trim()          // Thêm Email  
+                    DiaChi = guna2TextBox3.Text.Trim(),// Sửa lại đây
+                    SoDienThoai = guna2TextBox4.Text.Trim(),  // Sửa lại đây
+                    Email = guna2TextBox5.Text.Trim()          // Thêm Email
                 };
 
                 khachHangBLL.Update(kh);
@@ -75,11 +72,6 @@ namespace Eden.UI
         private void btnHuy_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void guna2TextBox2_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -92,6 +92,7 @@
             this.btnThisMonth.Size = new System.Drawing.Size(108, 45);
             this.btnThisMonth.TabIndex = 0;
             this.btnThisMonth.Text = "This month";
+            this.btnThisMonth.Click += new System.EventHandler(this.btnThisMonth_Click);
             // 
             // btnLast30Days
             // 
@@ -106,6 +107,7 @@
             this.btnLast30Days.Size = new System.Drawing.Size(108, 45);
             this.btnLast30Days.TabIndex = 0;
             this.btnLast30Days.Text = "Last 30 days";
+            this.btnLast30Days.Click += new System.EventHandler(this.btnLast30Days_Click);
             // 
             // btnLast7Days
             // 
@@ -120,6 +122,7 @@
             this.btnLast7Days.Size = new System.Drawing.Size(108, 45);
             this.btnLast7Days.TabIndex = 0;
             this.btnLast7Days.Text = "Last 7 days";
+            this.btnLast7Days.Click += new System.EventHandler(this.btnLast7Days_Click);
             // 
             // btnToday
             // 
@@ -134,6 +137,7 @@
             this.btnToday.Size = new System.Drawing.Size(108, 45);
             this.btnToday.TabIndex = 0;
             this.btnToday.Text = "Today";
+            this.btnToday.Click += new System.EventHandler(this.btnToday_Click);
             // 
             // dtpEndDate
             // 
@@ -174,6 +178,8 @@
             this.btnCustomDate.Size = new System.Drawing.Size(108, 45);
             this.btnCustomDate.TabIndex = 0;
             this.btnCustomDate.Text = "Custom";
+            this.btnCustomDate.Click += new System.EventHandler(this.btnCustomDate_Click);
+
             // 
             // btnOkCustomDate
             // 
@@ -188,6 +194,7 @@
             this.btnOkCustomDate.Size = new System.Drawing.Size(108, 45);
             this.btnOkCustomDate.TabIndex = 0;
             this.btnOkCustomDate.Text = "ok";
+            this.btnOkCustomDate.Click += new System.EventHandler(this.btnOkCustomDate_Click);
             // 
             // guna2Panel1
             // 
@@ -516,6 +523,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvUnderstock)).EndInit();
             this.ResumeLayout(false);
 
+        }
+
+        private void BtnThisMonth_Click(object sender, System.EventArgs e)
+        {
+            throw new System.NotImplementedException();
         }
 
         #endregion

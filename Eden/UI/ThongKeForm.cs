@@ -57,43 +57,48 @@ namespace Eden
         }
 
         //Event methods
-        //private void btnToday_Click(object sender, EventArgs e)
-        //{
-        //    dtpStartDate.Value = DateTime.Today;
-        //    dtpEndDate.Value = DateTime.Now;
-        //    LoadData();
-        //    DisableCustomDates();
-        //}
+        private void btnToday_Click(object sender, EventArgs e)
+        {
+            dtpStartDate.Value = DateTime.Today;
+            dtpEndDate.Value = DateTime.Now;
+            LoadData();
+            DisableCustomDates();
+        }
 
-        //private void btnLast7Days_Click(object sender, EventArgs e)
-        //{
-        //    dtpStartDate.Value = DateTime.Today.AddDays(-7);
-        //    dtpEndDate.Value = DateTime.Now;
-        //    LoadData();
-        //    DisableCustomDates();
-        //}
+        private void btnLast7Days_Click(object sender, EventArgs e)
+        {
+            dtpStartDate.Value = DateTime.Today.AddDays(-7);
+            dtpEndDate.Value = DateTime.Now;
+            LoadData();
+            DisableCustomDates();
+        }
 
-        //private void btnLast30Days_Click(object sender, EventArgs e)
-        //{
-        //    dtpStartDate.Value = DateTime.Today.AddDays(-30);
-        //    dtpEndDate.Value = DateTime.Now;
-        //    LoadData();
-        //    DisableCustomDates();
-        //}
+        private void btnLast30Days_Click(object sender, EventArgs e)
+        {
+            dtpStartDate.Value = DateTime.Today.AddDays(-30);
+            dtpEndDate.Value = DateTime.Now;
+            LoadData();
+            DisableCustomDates();
+        }
 
-        //private void btnThisMonth_Click(object sender, EventArgs e)
-        //{
-        //    dtpStartDate.Value = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
-        //    dtpEndDate.Value = DateTime.Now;
-        //    LoadData();
-        //    DisableCustomDates();
-        //}
+        private void btnThisMonth_Click(object sender, EventArgs e)
+        {
+            dtpStartDate.Value = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+            dtpEndDate.Value = DateTime.Now;
+            LoadData();
+            DisableCustomDates();
+        }
 
-        //private void btnCustomDate_Click(object sender, EventArgs e)
-        //{
-        //    dtpStartDate.Enabled = true;
-        //    dtpEndDate.Enabled = true;
-        //    btnOkCustomDate.Visible = true;
-        //}
+        private void btnCustomDate_Click(object sender, EventArgs e)
+        {
+            dtpStartDate.Enabled = true;
+            dtpEndDate.Enabled = true;
+            btnOkCustomDate.Visible = true;
+        }
+
+        private void btnOkCustomDate_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
     }
 }
