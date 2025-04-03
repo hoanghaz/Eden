@@ -48,7 +48,7 @@ GO
 -- Bảng Loại Sản Phẩm
 CREATE TABLE LOAISANPHAM (
     id INT IDENTITY(1,1) PRIMARY KEY,
-    MaLoaiSanPham AS CAST('LSP' + RIGHT('0000' + CAST(id AS VARCHAR(4)), 4) AS CHAR(6)) PERSISTED,
+    MaLoaiSanPham AS ('LSP' + RIGHT('000' + CAST(id AS VARCHAR(3)), 3)) PERSISTED,
     TenLoaiSanPham NVARCHAR(255) NOT NULL,
 );
 GO
@@ -72,8 +72,6 @@ CREATE TABLE SANPHAM (
     MoTa NVARCHAR(MAX),
     Gia DECIMAL(10,2) NOT NULL,
     SoLuong INT NOT NULL,
-    NgayNhap DATETIME NOT NULL,
-    HanSuDung DATETIME, -- Hạn sử dụng nếu có
     MauSac NVARCHAR(50),
     AnhChiTiet NVARCHAR(255),
 	idNhaCungCap INT REFERENCES NHACUNGCAP(id) ON DELETE CASCADE,
@@ -212,12 +210,12 @@ VALUES
 GO
 
 -- Thêm dữ liệu vào bảng SANPHAM
-INSERT INTO SANPHAM (TenSanPham, MoTa, Gia, SoLuong, NgayNhap, HanSuDung, MauSac, AnhChiTiet, idNhaCungCap, idLoaiSanPham)
+INSERT INTO SANPHAM (TenSanPham, MoTa, Gia, SoLuong, , MauSac, AnhChiTiet, idNhaCungCap, idLoaiSanPham)
 VALUES 
-    (N'Hoa hồng đỏ', N'Hoa hồng đỏ tươi', 50000, 100, '2023-10-01', '2023-10-15', N'Đỏ', 'hoahongdo.jpg', 1, 1),
-    (N'Hoa cúc trắng', N'Hoa cúc trắng tinh khiết', 30000, 150, '2023-10-02', '2023-10-20', N'Trắng', 'hoacuctrang.jpg', 2, 2),
-    (N'Hoa ly vàng', N'Hoa ly vàng rực rỡ', 70000, 80, '2023-10-03', '2023-10-25', N'Vàng', 'hoalyvang.jpg', 3, 3),
-    (N'Hoa tulip hồng', N'Hoa tulip hồng nhẹ nhàng', 60000, 120, '2023-10-04', '2023-10-30', N'Hồng', 'hoatuliphong.jpg', 1, 4);
+    (N'Hoa hồng đỏ', N'Hoa hồng đỏ tươi', 50000, 100,  N'Đỏ', 'hoahongdo.jpg', 1, 1),
+    (N'Hoa cúc trắng', N'Hoa cúc trắng tinh khiết', 30000, 150,  N'Trắng', 'hoacuctrang.jpg', 2, 2),
+    (N'Hoa ly vàng', N'Hoa ly vàng rực rỡ', 70000, 80,  N'Vàng', 'hoalyvang.jpg', 3, 3),
+    (N'Hoa tulip hồng', N'Hoa tulip hồng nhẹ nhàng', 60000, 120,  N'Hồng', 'hoatuliphong.jpg', 1, 4);
 GO
 
 -- Thêm dữ liệu vào bảng KHACHHANG
