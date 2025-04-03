@@ -193,6 +193,18 @@
     <Compile Include="UI\NhaCungCapForm.Designer.cs">
       <DependentUpon>NhaCungCapForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\NhaCungCapFormAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\NhaCungCapFormAdd.Designer.cs">
+      <DependentUpon>NhaCungCapFormAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\NhaCungCapFormSua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\NhaCungCapFormSua.Designer.cs">
+      <DependentUpon>NhaCungCapFormSua.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\NhapKhoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -271,6 +283,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\NguoiDungForm.resx">
       <DependentUpon>NguoiDungForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\NhaCungCapForm.resx">
+      <DependentUpon>NhaCungCapForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\NhaCungCapFormAdd.resx">
+      <DependentUpon>NhaCungCapFormAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\NhaCungCapFormSua.resx">
+      <DependentUpon>NhaCungCapFormSua.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PhanLoaiForm.resx">
       <DependentUpon>PhanLoaiForm.cs</DependentUpon>

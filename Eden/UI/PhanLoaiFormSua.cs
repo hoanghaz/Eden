@@ -55,12 +55,20 @@ namespace Eden.UI
                 };
 
                 loaiSanPhamBLL.Update(lsp);
-                MessageBox.Show("Cập nhật khách hàng thành công!");
+
+                MessageBox.Show("Cập nhật loại sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Gọi phương thức cập nhật DataGridView từ form cha
+                if (this.Owner is PhanLoaiForm parentForm)
+                {
+                    parentForm.UpdateDataGridView(lsp);
+                }
+
                 this.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi cập nhật: " + ex.Message);
+                MessageBox.Show("Lỗi khi cập nhật: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -68,5 +76,6 @@ namespace Eden.UI
         {
             this.Close();
         }
+
     }
 }

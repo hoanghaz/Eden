@@ -21,21 +21,17 @@ namespace Eden
             LoadLoaiSanPham();
         }
 
-        private void PhanLoaiForm_Load(object sender, EventArgs e)
-        {
 
-        }
         private void LoadLoaiSanPham()
         {
             try
             {
-                guna2DataGridView1.DataSource = null; // Xóa dữ liệu cũ trước khi load lại
-                guna2DataGridView1.DataSource = loaiSanPhamBLL.GetAll();
-                guna2DataGridView1.Refresh();
+                guna2DataGridView1.DataSource = null; // Xóa nguồn dữ liệu cũ
+                guna2DataGridView1.DataSource = loaiSanPhamBLL.GetAll(); // Load dữ liệu mới từ DB
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message);
+                MessageBox.Show("Lỗi khi tải danh sách loại sản phẩm: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -52,16 +48,12 @@ namespace Eden
         {
             if (guna2DataGridView1.CurrentRow != null)
             {
-                // Lấy mã loại sản phẩm từ DataGridView
                 string maLSP = guna2DataGridView1.CurrentRow.Cells["MaLoaiSanPham"].Value.ToString();
-
-                // Tạo form sửa
                 PhanLoaiFormSua phanLoaiFormSua = new PhanLoaiFormSua(maLSP);
 
-                // Đăng ký sự kiện khi form đóng để cập nhật lại danh sách
-                phanLoaiFormSua.FormClosed += (s, args) => LoadLoaiSanPham();
+                // Truyền form cha để có thể gọi UpdateDataGridView
+                phanLoaiFormSua.Owner = this;
 
-                // Hiển thị form sửa
                 phanLoaiFormSua.ShowDialog();
             }
             else
@@ -109,6 +101,17 @@ namespace Eden
             else
             {
                 MessageBox.Show("Vui lòng chọn loại sản phẩm cần xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        public void UpdateDataGridView(LOAISANPHAM updatedLSP)
+        {
+            foreach (DataGridViewRow row in guna2DataGridView1.Rows)
+            {
+                if (row.Cells["MaLoaiSanPham"].Value.ToString() == updatedLSP.MaLoaiSanPham)
+                {
+                    row.Cells["TenLoaiSanPham"].Value = updatedLSP.TenLoaiSanPham;
+                    break;
+                }
             }
         }
     }

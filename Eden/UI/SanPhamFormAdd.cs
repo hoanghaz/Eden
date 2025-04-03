@@ -21,6 +21,7 @@ namespace Eden.UI
             loaiSanPhamBLL = new LOAISANPHAMBLL();
             GenerateProductID();
             LoadLoaiSanPham();
+            LoadNhaCungCap();
         }
         private void GenerateProductID()
         {
@@ -68,6 +69,31 @@ namespace Eden.UI
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi khi tải danh sách loại sản phẩm: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void LoadNhaCungCap()
+        {
+            try
+            {
+                // Gọi BLL để lấy danh sách nhà cung cấp
+                var nhaCungCapBLL = new NHACUNGCAPBLL();
+                var listNCC = nhaCungCapBLL.GetAll();
+
+                if (listNCC.Count > 0)
+                {
+                    // Gán dữ liệu cho ComboBox
+                    guna2ComboBoxNCC.DataSource = listNCC;
+                    guna2ComboBoxNCC.DisplayMember = "TenNhaCungCap"; // Hiển thị tên nhà cung cấp
+                    guna2ComboBoxNCC.ValueMember = "MaNhaCungCap"; // Lưu mã nhà cung cấp
+                }
+                else
+                {
+                    MessageBox.Show("Không có nhà cung cấp nào trong hệ thống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải danh sách nhà cung cấp: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void guna2Button1_Click(object sender, EventArgs e)
