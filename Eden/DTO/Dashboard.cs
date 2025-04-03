@@ -53,7 +53,7 @@ namespace Eden
             TopProductsList = _context.CHITIETHOADONs
                 .Where(oi => oi.HOADON.NgayLap >= startDate && oi.HOADON.NgayLap <= endDate)
                 .GroupBy(oi => oi.SANPHAM.TenSanPham)
-                .Select(g => new ProductStatistic { Name = g.Key, Quantity = g.Sum(oi => oi.SoLuong) })
+                .Select(g => new ProductStatistic { Name = g.Key, Quantity = (int)g.Sum(oi => oi.SoLuong) })
                 .OrderByDescending(ps => ps.Quantity)
                 .Take(5)
                 .ToList();
