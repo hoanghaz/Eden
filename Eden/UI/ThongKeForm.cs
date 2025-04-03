@@ -10,74 +10,90 @@ namespace Eden
     public partial class ThongKeForm : Form
     {
         private QLBanHoaEntities db = new QLBanHoaEntities(); // DbContext của Entity Framework
+        private Dashboard model;
 
         public ThongKeForm()
         {
             InitializeComponent();
-            LoadThongKe();
+            dtpStartDate.Value = DateTime.Today.AddDays(-7);
+            dtpEndDate.Value = DateTime.Now;
+            btnLast7Days.Select();
+            model = new Dashboard(db);
+            LoadData();
         }
 
-        private void LoadThongKe()
+        private void LoadData()
         {
-            // Mặc định hiển thị tổng doanh thu hôm nay
-            DateTime today = DateTime.Today;
-            ThongKeDoanhThu(today, today);
-            cmbLoaiThongKe.Items.Add("Doanh thu");
-            cmbLoaiThongKe.Items.Add("Sản phẩm bán chạy");
-            cmbLoaiThongKe.SelectedIndex = 0; // Mặc định là "Doanh thu"
-        }
-
-        private void btnThongKe_Click(object sender, EventArgs e)
-        {
-            DateTime fromDate = dtpFrom.Value;
-            DateTime toDate = dtpTo.Value;
-
-            if (cmbLoaiThongKe.SelectedIndex == 0) // Doanh thu
-                ThongKeDoanhThu(fromDate, toDate);
-            else if (cmbLoaiThongKe.SelectedIndex == 1) // Sản phẩm bán chạy
-                ThongKeSanPhamBanChay(fromDate, toDate);
-        }
-
-        private void ThongKeDoanhThu(DateTime from, DateTime to)
-        {
-            var doanhThu = db.HOADONs.Where(hd => DbFunctions.TruncateTime(hd.NgayLap) >= from.Date &&
-                 DbFunctions.TruncateTime(hd.NgayLap) <= to.Date).ToList();
-
-            dgvThongKe.DataSource = doanhThu; // Hiển thị lên DataGridView
-
-            // Hiển thị biểu đồ
-            chartThongKe.Series.Clear();
-            var series = new Series("Doanh Thu");
-            series.ChartType = SeriesChartType.Column;
-            chartThongKe.Series.Add(series);
-
-            foreach (var item in doanhThu)
+            var refreshData = model.LoadData(dtpStartDate.Value, dtpEndDate.Value);
+            if (refreshData == true)
             {
-                series.Points.AddXY(item.NgayLap.ToShortDateString(), item.TongTien);
+                lblNumOrders.Text = model.NumOrders.ToString();
+                lblTotalRevenue.Text = "$" + model.TotalRevenue.ToString();
+                lblTotalProfit.Text = "$" + model.TotalProfit.ToString();
+                lblNumCustomers.Text = model.NumCustomers.ToString();
+                lblNumSuppliers.Text = model.NumSuppliers.ToString();
+                lblNumProducts.Text = model.NumProducts.ToString();
+                chartGrossRevenue.DataSource = model.GrossRevenueList;
+                chartGrossRevenue.Series[0].XValueMember = "Date";
+                chartGrossRevenue.Series[0].YValueMembers = "TotalAmount";
+                chartGrossRevenue.DataBind();
+                chartTopProducts.DataSource = model.TopProductsList;
+                chartTopProducts.Series[0].XValueMember = "Key";
+                chartTopProducts.Series[0].YValueMembers = "Value";
+                chartTopProducts.DataBind();
+                dgvUnderstock.DataSource = model.UnderstockList;
+                dgvUnderstock.Columns[0].HeaderText = "Item";
+                dgvUnderstock.Columns[1].HeaderText = "Units";
+                Console.WriteLine("Loaded view :)");
             }
+            else Console.WriteLine("View not loaded, same query");
         }
 
-        private void ThongKeSanPhamBanChay(DateTime from, DateTime to)
+        private void DisableCustomDates()
         {
-            var sanPhamBanChay = db.CHITIETHOADONs
-                .Where(ct => ct.HOADON.NgayLap >= from && ct.HOADON.NgayLap <= to)
-                .GroupBy(ct => ct.SANPHAM.TenSanPham)
-                .Select(g => new { SanPham = g.Key, SoLuong = g.Sum(ct => ct.SoLuong) })
-                .OrderByDescending(sp => sp.SoLuong)
-                .ToList();
-
-            dgvThongKe.DataSource = sanPhamBanChay; // Hiển thị lên DataGridView
-
-            // Hiển thị biểu đồ
-            chartThongKe.Series.Clear();
-            var series = new Series("Sản phẩm bán chạy");
-            series.ChartType = SeriesChartType.Pie;
-            chartThongKe.Series.Add(series);
-
-            foreach (var item in sanPhamBanChay)
-            {
-                series.Points.AddXY(item.SanPham, item.SoLuong);
-            }
+            dtpStartDate.Enabled = false;
+            dtpEndDate.Enabled = false;
+            btnOkCustomDate.Visible = false;
         }
+
+        //Event methods
+        //private void btnToday_Click(object sender, EventArgs e)
+        //{
+        //    dtpStartDate.Value = DateTime.Today;
+        //    dtpEndDate.Value = DateTime.Now;
+        //    LoadData();
+        //    DisableCustomDates();
+        //}
+
+        //private void btnLast7Days_Click(object sender, EventArgs e)
+        //{
+        //    dtpStartDate.Value = DateTime.Today.AddDays(-7);
+        //    dtpEndDate.Value = DateTime.Now;
+        //    LoadData();
+        //    DisableCustomDates();
+        //}
+
+        //private void btnLast30Days_Click(object sender, EventArgs e)
+        //{
+        //    dtpStartDate.Value = DateTime.Today.AddDays(-30);
+        //    dtpEndDate.Value = DateTime.Now;
+        //    LoadData();
+        //    DisableCustomDates();
+        //}
+
+        //private void btnThisMonth_Click(object sender, EventArgs e)
+        //{
+        //    dtpStartDate.Value = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+        //    dtpEndDate.Value = DateTime.Now;
+        //    LoadData();
+        //    DisableCustomDates();
+        //}
+
+        //private void btnCustomDate_Click(object sender, EventArgs e)
+        //{
+        //    dtpStartDate.Enabled = true;
+        //    dtpEndDate.Enabled = true;
+        //    btnOkCustomDate.Visible = true;
+        //}
     }
 }

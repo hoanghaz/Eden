@@ -100,7 +100,7 @@
             this.Controls.Add(this.suakhachhang);
             this.Controls.Add(this.addkhachhang);
             this.Name = "KhachHangForm";
-            this.Text = "KhachHangForm";
+            this.Text = "6";
             ((System.ComponentModel.ISupportInitialize)(this.dgkhachhang)).EndInit();
             this.ResumeLayout(false);
 
