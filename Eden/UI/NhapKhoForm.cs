@@ -5,378 +5,221 @@ using System.Windows.Forms;
 
 namespace Eden
 {
-    partial class NhapKhoForm
-    {
-        private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.DataGridView dgvPhieuNhap;
-        private System.Windows.Forms.DataGridView dgvChiTietPhieuNhap;
-        private System.Windows.Forms.Button btnAddPhieuNhap;
-        private System.Windows.Forms.Button btnUpdatePhieuNhap;
-        private System.Windows.Forms.Button btnDeletePhieuNhap;
-        private System.Windows.Forms.Button btnAddChiTiet;
-        private System.Windows.Forms.Button btnUpdateChiTiet;
-        private System.Windows.Forms.Button btnDeleteChiTiet;
-        private System.Windows.Forms.ComboBox comboBoxNhaCungCap;
-        private System.Windows.Forms.ComboBox comboBoxNguoiDung;
-        private System.Windows.Forms.ComboBox comboBoxSanPham;
-        private System.Windows.Forms.DateTimePicker dateTimePickerNgayNhap;
-        private System.Windows.Forms.TextBox txtSoLuong;
-        private System.Windows.Forms.TextBox txtDonGia;
-        private System.Windows.Forms.DateTimePicker dateTimePickerStartDate;
-        private System.Windows.Forms.DateTimePicker dateTimePickerEndDate;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Label lblNgayNhap;
-        private System.Windows.Forms.Label lblNhaCungCap;
-        private System.Windows.Forms.Label lblNguoiDung;
-        private System.Windows.Forms.Label lblSanPham;
-        private System.Windows.Forms.Label lblSoLuong;
-        private System.Windows.Forms.Label lblDonGia;
-        private System.Windows.Forms.Label lblStartDate;
-        private System.Windows.Forms.Label lblEndDate;
-
-        private void InitializeComponent()
-        {
-            this.dgvPhieuNhap = new System.Windows.Forms.DataGridView();
-            this.dgvChiTietPhieuNhap = new System.Windows.Forms.DataGridView();
-            this.btnAddPhieuNhap = new System.Windows.Forms.Button();
-            this.btnUpdatePhieuNhap = new System.Windows.Forms.Button();
-            this.btnDeletePhieuNhap = new System.Windows.Forms.Button();
-            this.btnAddChiTiet = new System.Windows.Forms.Button();
-            this.btnUpdateChiTiet = new System.Windows.Forms.Button();
-            this.btnDeleteChiTiet = new System.Windows.Forms.Button();
-            this.comboBoxNhaCungCap = new System.Windows.Forms.ComboBox();
-            this.comboBoxNguoiDung = new System.Windows.Forms.ComboBox();
-            this.comboBoxSanPham = new System.Windows.Forms.ComboBox();
-            this.dateTimePickerNgayNhap = new System.Windows.Forms.DateTimePicker();
-            this.txtSoLuong = new System.Windows.Forms.TextBox();
-            this.txtDonGia = new System.Windows.Forms.TextBox();
-            this.dateTimePickerStartDate = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerEndDate = new System.Windows.Forms.DateTimePicker();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.lblNgayNhap = new System.Windows.Forms.Label();
-            this.lblNhaCungCap = new System.Windows.Forms.Label();
-            this.lblNguoiDung = new System.Windows.Forms.Label();
-            this.lblSanPham = new System.Windows.Forms.Label();
-            this.lblSoLuong = new System.Windows.Forms.Label();
-            this.lblDonGia = new System.Windows.Forms.Label();
-            this.lblStartDate = new System.Windows.Forms.Label();
-            this.lblEndDate = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuNhap)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietPhieuNhap)).BeginInit();
-            this.SuspendLayout();
-
-            // dgvPhieuNhap
-            this.dgvPhieuNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPhieuNhap.Location = new System.Drawing.Point(12, 12);
-            this.dgvPhieuNhap.Name = "dgvPhieuNhap";
-            this.dgvPhieuNhap.Size = new System.Drawing.Size(600, 200);
-            this.dgvPhieuNhap.TabIndex = 0;
-            this.dgvPhieuNhap.SelectionChanged += new System.EventHandler(this.dgvPhieuNhap_SelectionChanged);
-
-            // dgvChiTietPhieuNhap
-            this.dgvChiTietPhieuNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvChiTietPhieuNhap.Location = new System.Drawing.Point(12, 230);
-            this.dgvChiTietPhieuNhap.Name = "dgvChiTietPhieuNhap";
-            this.dgvChiTietPhieuNhap.Size = new System.Drawing.Size(600, 200);
-            this.dgvChiTietPhieuNhap.TabIndex = 1;
-
-            // btnAddPhieuNhap
-            this.btnAddPhieuNhap.Location = new System.Drawing.Point(630, 12);
-            this.btnAddPhieuNhap.Name = "btnAddPhieuNhap";
-            this.btnAddPhieuNhap.Size = new System.Drawing.Size(75, 23);
-            this.btnAddPhieuNhap.TabIndex = 2;
-            this.btnAddPhieuNhap.Text = "Thêm Phiếu Nhập";
-            this.btnAddPhieuNhap.UseVisualStyleBackColor = true;
-            this.btnAddPhieuNhap.Click += new System.EventHandler(this.btnAddPhieuNhap_Click);
-
-            // btnUpdatePhieuNhap
-            this.btnUpdatePhieuNhap.Location = new System.Drawing.Point(630, 41);
-            this.btnUpdatePhieuNhap.Name = "btnUpdatePhieuNhap";
-            this.btnUpdatePhieuNhap.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdatePhieuNhap.TabIndex = 3;
-            this.btnUpdatePhieuNhap.Text = "Cập Nhật Phiếu Nhập";
-            this.btnUpdatePhieuNhap.UseVisualStyleBackColor = true;
-            this.btnUpdatePhieuNhap.Click += new System.EventHandler(this.btnUpdatePhieuNhap_Click);
-
-            // btnDeletePhieuNhap
-            this.btnDeletePhieuNhap.Location = new System.Drawing.Point(630, 70);
-            this.btnDeletePhieuNhap.Name = "btnDeletePhieuNhap";
-            this.btnDeletePhieuNhap.Size = new System.Drawing.Size(75, 23);
-            this.btnDeletePhieuNhap.TabIndex = 4;
-            this.btnDeletePhieuNhap.Text = "Xóa Phiếu Nhập";
-            this.btnDeletePhieuNhap.UseVisualStyleBackColor = true;
-            this.btnDeletePhieuNhap.Click += new System.EventHandler(this.btnDeletePhieuNhap_Click);
-
-            // btnAddChiTiet
-            this.btnAddChiTiet.Location = new System.Drawing.Point(630, 230);
-            this.btnAddChiTiet.Name = "btnAddChiTiet";
-            this.btnAddChiTiet.Size = new System.Drawing.Size(75, 23);
-            this.btnAddChiTiet.TabIndex = 5;
-            this.btnAddChiTiet.Text = "Thêm Chi Tiết";
-            this.btnAddChiTiet.UseVisualStyleBackColor = true;
-            this.btnAddChiTiet.Click += new System.EventHandler(this.btnAddChiTiet_Click);
-
-            // btnUpdateChiTiet
-            this.btnUpdateChiTiet.Location = new System.Drawing.Point(630, 259);
-            this.btnUpdateChiTiet.Name = "btnUpdateChiTiet";
-            this.btnUpdateChiTiet.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdateChiTiet.TabIndex = 6;
-            this.btnUpdateChiTiet.Text = "Cập Nhật Chi Tiết";
-            this.btnUpdateChiTiet.UseVisualStyleBackColor = true;
-            this.btnUpdateChiTiet.Click += new System.EventHandler(this.btnUpdateChiTiet_Click);
-
-            // btnDeleteChiTiet
-            this.btnDeleteChiTiet.Location = new System.Drawing.Point(630, 288);
-            this.btnDeleteChiTiet.Name = "btnDeleteChiTiet";
-            this.btnDeleteChiTiet.Size = new System.Drawing.Size(75, 23);
-            this.btnDeleteChiTiet.TabIndex = 7;
-            this.btnDeleteChiTiet.Text = "Xóa Chi Tiết";
-            this.btnDeleteChiTiet.UseVisualStyleBackColor = true;
-            this.btnDeleteChiTiet.Click += new System.EventHandler(this.btnDeleteChiTiet_Click);
-
-            // comboBoxNhaCungCap
-            this.comboBoxNhaCungCap.FormattingEnabled = true;
-            this.comboBoxNhaCungCap.Location = new System.Drawing.Point(755, 12);
-            this.comboBoxNhaCungCap.Name = "comboBoxNhaCungCap";
-            this.comboBoxNhaCungCap.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxNhaCungCap.TabIndex = 8;
-
-            // comboBoxNguoiDung
-            this.comboBoxNguoiDung.FormattingEnabled = true;
-            this.comboBoxNguoiDung.Location = new System.Drawing.Point(755, 41);
-            this.comboBoxNguoiDung.Name = "comboBoxNguoiDung";
-            this.comboBoxNguoiDung.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxNguoiDung.TabIndex = 9;
-
-            // comboBoxSanPham
-            this.comboBoxSanPham.FormattingEnabled = true;
-            this.comboBoxSanPham.Location = new System.Drawing.Point(755, 70);
-            this.comboBoxSanPham.Name = "comboBoxSanPham";
-            this.comboBoxSanPham.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxSanPham.TabIndex = 10;
-
-            // dateTimePickerNgayNhap
-            this.dateTimePickerNgayNhap.Location = new System.Drawing.Point(755, 97);
-            this.dateTimePickerNgayNhap.Name = "dateTimePickerNgayNhap";
-            this.dateTimePickerNgayNhap.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePickerNgayNhap.TabIndex = 11;
-
-            // txtSoLuong
-            this.txtSoLuong.Location = new System.Drawing.Point(755, 123);
-            this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.Size = new System.Drawing.Size(100, 20);
-            this.txtSoLuong.TabIndex = 12;
-
-            // txtDonGia
-            this.txtDonGia.Location = new System.Drawing.Point(755, 149);
-            this.txtDonGia.Name = "txtDonGia";
-            this.txtDonGia.Size = new System.Drawing.Size(100, 20);
-            this.txtDonGia.TabIndex = 13;
-
-            // dateTimePickerStartDate
-            this.dateTimePickerStartDate.Location = new System.Drawing.Point(755, 175);
-            this.dateTimePickerStartDate.Name = "dateTimePickerStartDate";
-            this.dateTimePickerStartDate.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePickerStartDate.TabIndex = 14;
-
-            // dateTimePickerEndDate
-            this.dateTimePickerEndDate.Location = new System.Drawing.Point(755, 201);
-            this.dateTimePickerEndDate.Name = "dateTimePickerEndDate";
-            this.dateTimePickerEndDate.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePickerEndDate.TabIndex = 15;
-
-            // btnSearch
-            this.btnSearch.Location = new System.Drawing.Point(755, 227);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 16;
-            this.btnSearch.Text = "Tìm Kiếm";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-
-            // NhapKhoForm
-            this.ClientSize = new System.Drawing.Size(984, 461);
-            this.Controls.Add(this.dgvPhieuNhap);
-            this.Controls.Add(this.dgvChiTietPhieuNhap);
-            this.Controls.Add(this.btnAddPhieuNhap);
-            this.Controls.Add(this.btnUpdatePhieuNhap);
-            this.Controls.Add(this.btnDeletePhieuNhap);
-            this.Controls.Add(this.btnAddChiTiet);
-            this.Controls.Add(this.btnUpdateChiTiet);
-            this.Controls.Add(this.btnDeleteChiTiet);
-            this.Controls.Add(this.comboBoxNhaCungCap);
-            this.Controls.Add(this.comboBoxNguoiDung);
-            this.Controls.Add(this.comboBoxSanPham);
-            this.Controls.Add(this.dateTimePickerNgayNhap);
-            this.Controls.Add(this.txtSoLuong);
-            this.Controls.Add(this.txtDonGia);
-            this.Controls.Add(this.dateTimePickerStartDate);
-            this.Controls.Add(this.dateTimePickerEndDate);
-            this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.lblNgayNhap);
-            this.Controls.Add(this.lblNhaCungCap);
-            this.Controls.Add(this.lblNguoiDung);
-            this.Controls.Add(this.lblSanPham);
-            this.Controls.Add(this.lblSoLuong);
-            this.Controls.Add(this.lblDonGia);
-            this.Controls.Add(this.lblStartDate);
-            this.Controls.Add(this.lblEndDate);
-            this.Name = "NhapKhoForm";
-            this.Text = "Quản lý Nhập Kho";
-            this.Load += new System.EventHandler(this.NhapKhoForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuNhap)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietPhieuNhap)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-        }
-    }
     public partial class NhapKhoForm : Form
     {
-        private PHIEUNHAPBLL phieuNhapBLL = new PHIEUNHAPBLL();
-        private CHITIETPHIEUNHAPBLL chiTietBLL = new CHITIETPHIEUNHAPBLL();
+        private PHIEUNHAPBLL phieuNhapBLL;
 
         public NhapKhoForm()
         {
             InitializeComponent();
+            phieuNhapBLL = new PHIEUNHAPBLL();
+            LoadData();
         }
 
-        // Khi form được load, sẽ hiển thị danh sách phiếu nhập và chi tiết
-        private void NhapKhoForm_Load(object sender, EventArgs e)
+        // Hàm Load dữ liệu phiếu nhập vào DataGridView
+        private void LoadData()
         {
-            LoadPhieuNhapData();
-            LoadChiTietPhieuNhapData();
-        }
-
-        // Tải dữ liệu phiếu nhập
-        private void LoadPhieuNhapData()
-        {
-            var phieuNhapList = phieuNhapBLL.GetAll();
-            dgvPhieuNhap.DataSource = phieuNhapList;
-        }
-
-        // Tải dữ liệu chi tiết phiếu nhập theo mã phiếu
-        private void LoadChiTietPhieuNhapData()
-        {
-            if (dgvPhieuNhap.SelectedRows.Count > 0)
+            try
             {
-                var selectedPhieuNhap = dgvPhieuNhap.SelectedRows[0].Cells["MaPhieuNhap"].Value.ToString();
-                var chiTietList = chiTietBLL.GetByMaPhieuNhap(selectedPhieuNhap);
-                dgvChiTietPhieuNhap.DataSource = chiTietList;
-            }
-        }
-
-        // Thêm phiếu nhập mới
-        private void btnAddPhieuNhap_Click(object sender, EventArgs e)
-        {
-            var phieuNhap = new PHIEUNHAP
-            {
-                NgayNhap = dateTimePickerNgayNhap.Value,
-                idNhaCungCap = Convert.ToInt32(comboBoxNhaCungCap.SelectedValue),  // giả sử có combo box để chọn nhà cung cấp
-                idNguoiDung = Convert.ToInt32(comboBoxNguoiDung.SelectedValue),  // giả sử có combo box để chọn người dùng
-                TongTien = 0  // Giá trị này có thể được tính sau khi thêm chi tiết phiếu nhập
-            };
-
-            phieuNhapBLL.Add(phieuNhap);
-            LoadPhieuNhapData();
-        }
-
-        // Thêm chi tiết phiếu nhập
-        private void btnAddChiTiet_Click(object sender, EventArgs e)
-        {
-            var chiTiet = new CHITIETPHIEUNHAP
-            {
-                idPhieuNhap = Convert.ToInt32(dgvPhieuNhap.SelectedRows[0].Cells["id"].Value),
-                idSanPham = Convert.ToInt32(comboBoxSanPham.SelectedValue), // Giả sử có combo box để chọn sản phẩm
-                SoLuong = Convert.ToInt32(txtSoLuong.Text),
-                DonGia = Convert.ToDecimal(txtDonGia.Text),
-                ThanhTien = Convert.ToInt32(txtSoLuong.Text) * Convert.ToDecimal(txtDonGia.Text)
-            };
-
-            chiTietBLL.Add(chiTiet);
-            LoadChiTietPhieuNhapData();
-        }
-
-        // Cập nhật phiếu nhập
-        private void btnUpdatePhieuNhap_Click(object sender, EventArgs e)
-        {
-            if (dgvPhieuNhap.SelectedRows.Count > 0)
-            {
-                var selectedPhieuNhap = dgvPhieuNhap.SelectedRows[0].Cells["id"].Value.ToString();
-                var phieuNhap = phieuNhapBLL.GetByMaPhieuNhap(selectedPhieuNhap).FirstOrDefault();
-
-                if (phieuNhap != null)
+                var phieuNhaps = phieuNhapBLL.GetAll();
+                dgvPhieuNhap.DataSource = phieuNhaps.Select(p => new
                 {
-                    phieuNhap.NgayNhap = dateTimePickerNgayNhap.Value;
-                    phieuNhap.idNhaCungCap = Convert.ToInt32(comboBoxNhaCungCap.SelectedValue);
-                    phieuNhap.idNguoiDung = Convert.ToInt32(comboBoxNguoiDung.SelectedValue);
-                    phieuNhap.TongTien = 0;  // Tính toán lại tổng tiền sau khi cập nhật chi tiết phiếu nhập
-
-                    phieuNhapBLL.Update(phieuNhap);
-                    LoadPhieuNhapData();
-                }
+                    p.MaPhieuNhap,
+                    p.NgayNhap,
+                    NhaCungCap = p.NHACUNGCAP.TenNhaCungCap,
+                    NguoiDung = p.NGUOIDUNG.TenNguoiDung
+                }).ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải dữ liệu phiếu nhập: " + ex.Message);
             }
         }
 
-        // Cập nhật chi tiết phiếu nhập
-        private void btnUpdateChiTiet_Click(object sender, EventArgs e)
+        // Sự kiện Thêm phiếu nhập
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (dgvChiTietPhieuNhap.SelectedRows.Count > 0)
+            NhapKhoFormAdd formAdd = new NhapKhoFormAdd();
+            if (formAdd.ShowDialog() == DialogResult.OK)
             {
-                var selectedChiTiet = dgvChiTietPhieuNhap.SelectedRows[0].Cells["id"].Value.ToString();
-                var chiTiet = chiTietBLL.GetById(Convert.ToInt32(selectedChiTiet));
-
-                if (chiTiet != null)
-                {
-                    chiTiet.SoLuong = Convert.ToInt32(txtSoLuong.Text);
-                    chiTiet.DonGia = Convert.ToDecimal(txtDonGia.Text);
-                    chiTiet.ThanhTien = chiTiet.SoLuong * chiTiet.DonGia;
-
-                    chiTietBLL.Update(chiTiet);
-                    LoadChiTietPhieuNhapData();
-                }
+                LoadData();
             }
         }
 
-        // Xóa phiếu nhập
-        private void btnDeletePhieuNhap_Click(object sender, EventArgs e)
+        // Sự kiện Sửa phiếu nhập
+        private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (dgvPhieuNhap.SelectedRows.Count > 0)
+            if (dgvPhieuNhap.SelectedRows.Count == 0)
             {
-                var selectedPhieuNhap = dgvPhieuNhap.SelectedRows[0].Cells["id"].Value.ToString();
-                var phieuNhap = phieuNhapBLL.GetByMaPhieuNhap(selectedPhieuNhap).FirstOrDefault();
+                MessageBox.Show("Vui lòng chọn một phiếu nhập để sửa.");
+                return;
+            }
 
-                if (phieuNhap != null)
+            string maPhieuNhap = dgvPhieuNhap.SelectedRows[0].Cells["MaPhieuNhap"].Value.ToString();
+            NhapKhoFormAdd formAdd = new NhapKhoFormAdd(maPhieuNhap);
+            if (formAdd.ShowDialog() == DialogResult.OK)
+            {
+                LoadData();
+            }
+        }
+
+        // Sự kiện Xóa phiếu nhập
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dgvPhieuNhap.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn một phiếu nhập để xóa.");
+                return;
+            }
+
+            string maPhieuNhap = dgvPhieuNhap.SelectedRows[0].Cells["MaPhieuNhap"].Value.ToString();
+            PHIEUNHAP phieuNhap = phieuNhapBLL.GetByMaPhieuNhap(maPhieuNhap);
+
+            if (phieuNhap != null)
+            {
+                var confirmResult = MessageBox.Show("Bạn chắc chắn muốn xóa phiếu nhập này?", "Xác nhận xóa", MessageBoxButtons.YesNo);
+                if (confirmResult == DialogResult.Yes)
                 {
                     phieuNhapBLL.Delete(phieuNhap);
-                    LoadPhieuNhapData();
+                    LoadData();
                 }
             }
         }
 
-        // Xóa chi tiết phiếu nhập
-        private void btnDeleteChiTiet_Click(object sender, EventArgs e)
-        {
-            if (dgvChiTietPhieuNhap.SelectedRows.Count > 0)
-            {
-                var selectedChiTiet = dgvChiTietPhieuNhap.SelectedRows[0].Cells["id"].Value.ToString();
-                var chiTiet = chiTietBLL.GetById(Convert.ToInt32(selectedChiTiet));
-
-                if (chiTiet != null)
-                {
-                    chiTietBLL.Delete(chiTiet);
-                    LoadChiTietPhieuNhapData();
-                }
-            }
-        }
-
-        // Tìm kiếm phiếu nhập theo thời gian
+        // Sự kiện Tìm kiếm phiếu nhập
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            var startDate = dateTimePickerStartDate.Value;
-            var endDate = dateTimePickerEndDate.Value;
-
-            var filteredPhieuNhapList = phieuNhapBLL.SearchPhieuNhap(startDate, endDate);
-            dgvPhieuNhap.DataSource = filteredPhieuNhapList;
+            string searchTerm = txtSearch.Text.Trim().ToLower();
+            var phieuNhaps = phieuNhapBLL.GetAll()
+                                           .Where(p => p.MaPhieuNhap.ToLower().Contains(searchTerm) ||
+                                                       p.NHACUNGCAP.TenNhaCungCap.ToLower().Contains(searchTerm) ||
+                                                       p.NGUOIDUNG.TenNguoiDung.ToLower().Contains(searchTerm))
+                                           .ToList();
+            dgvPhieuNhap.DataSource = phieuNhaps.Select(p => new
+            {
+                p.MaPhieuNhap,
+                p.NgayNhap,
+                NhaCungCap = p.NHACUNGCAP.TenNhaCungCap,
+                NguoiDung = p.NGUOIDUNG.TenNguoiDung
+            }).ToList();
         }
+
+        // Sự kiện Refresh lại danh sách phiếu nhập
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        // Hàm khởi tạo giao diện cho form chính này
+        private void InitializeComponent()
+        {
+            this.dgvPhieuNhap = new System.Windows.Forms.DataGridView();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuNhap)).BeginInit();
+            this.SuspendLayout();
+
+            // 
+            // dgvPhieuNhap
+            // 
+            this.dgvPhieuNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPhieuNhap.Location = new System.Drawing.Point(20, 60);
+            this.dgvPhieuNhap.Name = "dgvPhieuNhap";
+            this.dgvPhieuNhap.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPhieuNhap.Size = new System.Drawing.Size(760, 300);
+            this.dgvPhieuNhap.TabIndex = 0;
+
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(20, 380);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 1;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(120, 380);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 2;
+            this.btnEdit.Text = "Sửa";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(220, 380);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 3;
+            this.btnDelete.Text = "Xóa";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(320, 20);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(200, 20);
+            this.txtSearch.TabIndex = 4;
+
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(540, 18);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 5;
+            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(640, 18);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.TabIndex = 6;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+
+            // 
+            // NhapKhoForm
+            // 
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.dgvPhieuNhap);
+            this.Name = "NhapKhoForm";
+            this.Text = "Quản Lý Phiếu Nhập";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuNhap)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+        }
+
+        private DataGridView dgvPhieuNhap;
+        private Button btnAdd;
+        private Button btnEdit;
+        private Button btnDelete;
+        private TextBox txtSearch;
+        private Button btnSearch;
+        private Button btnRefresh;
     }
 }

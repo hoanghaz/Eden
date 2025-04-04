@@ -7,7 +7,7 @@ namespace Eden
 {
     public class PHIEUNHAPDAL : IDisposable
     {
-        private QLBanHoaEntities db = new QLBanHoaEntities();
+        private readonly QLBanHoaEntities db = new QLBanHoaEntities();
 
         // Lấy tất cả phiếu nhập cùng thông tin nhà cung cấp và người dùng
         public List<PHIEUNHAP> GetAll()
@@ -15,12 +15,15 @@ namespace Eden
             return db.PHIEUNHAPs
                      .Include(p => p.NHACUNGCAP)
                      .Include(p => p.NGUOIDUNG)
+                     .OrderByDescending(p => p.NgayNhap)
                      .ToList();
         }
 
-        // Lấy phiếu nhập theo mã phiếu nhập (MaPhieuNhap)
+        // Lấy phiếu nhập theo mã phiếu nhập
         public PHIEUNHAP GetByMaPhieuNhap(string maPhieuNhap)
         {
+            if (string.IsNullOrEmpty(maPhieuNhap)) return null;
+
             return db.PHIEUNHAPs
                      .Include(p => p.NHACUNGCAP)
                      .Include(p => p.NGUOIDUNG)
@@ -30,6 +33,8 @@ namespace Eden
         // Thêm phiếu nhập
         public void Add(PHIEUNHAP entity)
         {
+            if (entity == null) return;
+
             db.PHIEUNHAPs.Add(entity);
             db.SaveChanges();
         }
@@ -37,28 +42,43 @@ namespace Eden
         // Cập nhật phiếu nhập
         public void Update(PHIEUNHAP entity)
         {
-            db.Entry(entity).State = EntityState.Modified;
-            db.SaveChanges();
+            if (entity == null) return;
+
+            var existing = db.PHIEUNHAPs.Find(entity.idPhieuNhap);
+            if (existing != null)
+            {
+                db.Entry(existing).CurrentValues.SetValues(entity);
+                db.SaveChanges();
+            }
         }
 
         // Xóa phiếu nhập
         public void Delete(PHIEUNHAP entity)
         {
-            db.PHIEUNHAPs.Remove(entity);
-            db.SaveChanges();
+            if (entity == null) return;
+
+            var existing = db.PHIEUNHAPs.Find(entity.idPhieuNhap);
+            if (existing != null)
+            {
+                db.PHIEUNHAPs.Remove(existing);
+                db.SaveChanges();
+            }
         }
 
-        // Lấy chi tiết phiếu nhập theo id phiếu nhập
+        // Lấy danh sách chi tiết phiếu nhập theo id phiếu nhập
         public List<CHITIETPHIEUNHAP> GetChiTietByPhieuNhap(int idPhieuNhap)
         {
             return db.CHITIETPHIEUNHAPs
                      .Where(c => c.idPhieuNhap == idPhieuNhap)
+                     .Include(c => c.SANPHAM)
                      .ToList();
         }
 
         // Thêm chi tiết phiếu nhập
         public void AddChiTiet(CHITIETPHIEUNHAP entity)
         {
+            if (entity == null) return;
+
             db.CHITIETPHIEUNHAPs.Add(entity);
             db.SaveChanges();
         }
@@ -66,18 +86,30 @@ namespace Eden
         // Cập nhật chi tiết phiếu nhập
         public void UpdateChiTiet(CHITIETPHIEUNHAP entity)
         {
-            db.Entry(entity).State = EntityState.Modified;
-            db.SaveChanges();
+            if (entity == null) return;
+
+            var existing = db.CHITIETPHIEUNHAPs.Find(entity.idChiTietPhieuNhap);
+            if (existing != null)
+            {
+                db.Entry(existing).CurrentValues.SetValues(entity);
+                db.SaveChanges();
+            }
         }
 
         // Xóa chi tiết phiếu nhập
         public void DeleteChiTiet(CHITIETPHIEUNHAP entity)
         {
-            db.CHITIETPHIEUNHAPs.Remove(entity);
-            db.SaveChanges();
+            if (entity == null) return;
+
+            var existing = db.CHITIETPHIEUNHAPs.Find(entity.idChiTietPhieuNhap);
+            if (existing != null)
+            {
+                db.CHITIETPHIEUNHAPs.Remove(existing);
+                db.SaveChanges();
+            }
         }
 
-        // Dispose
+        // Hủy tài nguyên
         public void Dispose()
         {
             db.Dispose();
