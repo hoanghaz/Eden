@@ -37,9 +37,7 @@ namespace Eden
                 chartGrossRevenue.Series[0].XValueMember = "Date";
                 chartGrossRevenue.Series[0].YValueMembers = "TotalAmount";
                 chartGrossRevenue.DataBind();
-                chartTopProducts.DataSource = model.TopProductsList
-                     .Select(p => new { Key = p.Name, Value = (double)p.Quantity })
-                     .ToList();
+                chartTopProducts.DataSource = model.TopProductsList;
                 chartTopProducts.Series[0].XValueMember = "Key";
                 chartTopProducts.Series[0].YValueMembers = "Value";
                 chartTopProducts.DataBind();
@@ -101,16 +99,6 @@ namespace Eden
         private void btnOkCustomDate_Click(object sender, EventArgs e)
         {
             LoadData();
-        }
-
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams cp = base.CreateParams;
-                cp.ExStyle |= 0x02000000; // WS_EX_COMPOSITED => Giảm nhấp nháy
-                return cp;
-            }
         }
     }
 }

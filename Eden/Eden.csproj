@@ -211,12 +211,6 @@
     <Compile Include="UI\NhapKhoForm.Designer.cs">
       <DependentUpon>NhapKhoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\NhapKhoFormAdd.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\NhapKhoFormAdd.Designer.cs">
-      <DependentUpon>NhapKhoFormAdd.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\NhomNguoiDungForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -298,12 +292,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\NhaCungCapFormSua.resx">
       <DependentUpon>NhaCungCapFormSua.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\NhapKhoForm.resx">
-      <DependentUpon>NhapKhoForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\NhapKhoFormAdd.resx">
-      <DependentUpon>NhapKhoFormAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\PhanLoaiForm.resx">
       <DependentUpon>PhanLoaiForm.cs</DependentUpon>
