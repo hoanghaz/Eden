@@ -44,7 +44,7 @@ namespace Eden
         {
             if (entity == null) return;
 
-            var existing = db.PHIEUNHAPs.Find(entity.idPhieuNhap);
+            var existing = db.PHIEUNHAPs.Find(entity.MaPhieuNhap);
             if (existing != null)
             {
                 db.Entry(existing).CurrentValues.SetValues(entity);
@@ -57,7 +57,7 @@ namespace Eden
         {
             if (entity == null) return;
 
-            var existing = db.PHIEUNHAPs.Find(entity.idPhieuNhap);
+            var existing = db.PHIEUNHAPs.Find(entity.MaPhieuNhap);
             if (existing != null)
             {
                 db.PHIEUNHAPs.Remove(existing);
@@ -88,7 +88,7 @@ namespace Eden
         {
             if (entity == null) return;
 
-            var existing = db.CHITIETPHIEUNHAPs.Find(entity.idChiTietPhieuNhap);
+            var existing = db.CHITIETPHIEUNHAPs.Find(entity.idPhieuNhap);
             if (existing != null)
             {
                 db.Entry(existing).CurrentValues.SetValues(entity);
@@ -101,7 +101,7 @@ namespace Eden
         {
             if (entity == null) return;
 
-            var existing = db.CHITIETPHIEUNHAPs.Find(entity.idChiTietPhieuNhap);
+            var existing = db.CHITIETPHIEUNHAPs.Find(entity.idPhieuNhap);
             if (existing != null)
             {
                 db.CHITIETPHIEUNHAPs.Remove(existing);
