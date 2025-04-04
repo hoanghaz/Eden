@@ -129,7 +129,7 @@
             this.forgot.ForeColor = System.Drawing.Color.White;
             this.forgot.Location = new System.Drawing.Point(204, 414);
             this.forgot.Name = "forgot";
-            this.forgot.Size = new System.Drawing.Size(120, 20);
+            this.forgot.Size = new System.Drawing.Size(95, 15);
             this.forgot.TabIndex = 4;
             this.forgot.Text = "Forgot password";
             this.forgot.Click += new System.EventHandler(this.forgot_Click);
@@ -141,7 +141,7 @@
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(80, 412);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(106, 22);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(85, 17);
             this.guna2HtmlLabel1.TabIndex = 3;
             this.guna2HtmlLabel1.Text = "Show password";
             // 
@@ -268,6 +268,7 @@
             this.guna2PictureBox2.Size = new System.Drawing.Size(662, 688);
             this.guna2PictureBox2.TabIndex = 0;
             this.guna2PictureBox2.TabStop = false;
+            this.guna2PictureBox2.Click += new System.EventHandler(this.guna2PictureBox2_Click);
             // 
             // guna2DragControl2
             // 

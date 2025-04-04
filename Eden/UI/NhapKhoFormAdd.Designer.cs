@@ -1,6 +1,6 @@
 ﻿namespace Eden
 {
-    partial class NhapKhoForm
+    partial class NhapKhoFormAdd
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // NhapKhoForm
+            // NhapKhoFormAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "NhapKhoForm";
-            this.Text = "NhapKhoForm";
-            this.Load += new System.EventHandler(this.NhapKhoForm_Load);
+            this.Name = "NhapKhoFormAdd";
+            this.Text = "NhapKhoFormAdd";
+            this.Load += new System.EventHandler(this.NhapKhoFormAdd_Load);
             this.ResumeLayout(false);
 
         }
